@@ -4,7 +4,7 @@ use Hotel
 create login Temp with password = '123456';
 create user Temp for login Temp;
 
--- ½ÇÉ«±í
+-- è§’è‰²è¡¨
 create table Staff(
 	username varchar(20) not null primary key,
 	pass varchar(20) not null,
@@ -19,7 +19,7 @@ create table Customer(
 	gender varchar(2)
 )
 
--- ·¿¼ä
+-- æˆ¿é—´
 create table Room_Info(
 	room_id int primary key not null,
 	type int not null,
