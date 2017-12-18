@@ -13,7 +13,7 @@
     <script src="js/home.js"></script>
 </head>
 <body>
-<h1>This is a Test page.</h1>
+<h1 id="head">This is a Test page.</h1>
 <form action="Test" method="post">
     <input type="submit" value="OK">
     <input type="button" value="This is a js button" onclick="changeBgcolor()">
