@@ -1,4 +1,4 @@
-create database Hotel
+﻿create database Hotel
 
 use Hotel
 create login Temp with password = '123456';
@@ -22,26 +22,25 @@ create table Customer(
 -- 房间
 create table Room_Info(
 	room_id int primary key not null,
-	type int not null,
-	floor int not null,
+	floors int not null,
 	face varchar(4) not null,
-	feature varchar(140)
+	feature varchar(140),
+	kind varchar(20) not null,
+	foreign key(kind) references Room_Type(kind)
 )
 
 create table Room_Status(
 	room_id int foreign key references Room_Info(room_id),
-	in_day date not null,
-	out_day date not null,
-	book_status bit not null,
-	tidy bit
+	in_day date,
+	out_day date ,
+	book_status varchar(20) not null,
+	tidy varchar(20)not null
 )
 
 create table Room_Type(
-	type int not null primary key,
+	kind varchar(20) not null primary key,
 	price int not null,
-	tol int not null,
-	free int not null,
-	room_id int foreign key references Room_Info(room_id)
+	free int not null
 )
 
 create table Book(
