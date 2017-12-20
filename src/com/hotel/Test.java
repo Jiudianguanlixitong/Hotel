@@ -15,7 +15,7 @@ public class Test extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Date timeNow = new Date();
         HttpSession session = request.getSession();
-        session.setAttribute("timeNow",timeNow);
+       session.setAttribute("timeNow",timeNow);
         RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
         rd.forward(request,response);
     }
