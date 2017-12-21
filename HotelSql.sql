@@ -26,15 +26,11 @@ create table Room_Info(
 	face varchar(4) not null,
 	feature varchar(140),
 	kind varchar(20) not null,
-	foreign key(kind) references Room_Type(kind)
-)
-
-create table Room_Status(
-	room_id int foreign key references Room_Info(room_id),
-	in_day date,
+	in_day date ,
 	out_day date ,
-	book_status varchar(20) not null,
-	tidy varchar(20)not null
+	book_status varchar(20),
+	tidy varchar(20)not null,
+	foreign key(kind) references Room_Type(kind)
 )
 
 create table Room_Type(
@@ -43,18 +39,21 @@ create table Room_Type(
 	free int not null
 )
 
-create table Book(
+create table Pre_Book(
 	id int foreign key references Customer(id),
-	room_id int,
-	day int,
 	in_day date not null,
 	out_day date not null,
+	kind varchar(20) not null,
+	request varchar(140),
 	price int not null
 )
 
 create table Bill(
 	id int foreign key references Customer(id),
-	day int not null,
+	in_day date,
+	out_day date ,
 	room_id int,
+	kind varchar(20) not null,
+	request varchar(140),
 	price int not null
 )
