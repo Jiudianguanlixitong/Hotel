@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context reloadable="true">
+    <Resource
+            name="jdbc/SQLServer"
+            type="javax.sql.DataSource"
+            auth="Container"
+            maxActive="4"
+            maxIdle="2"
+            username="Temp"
+            maxwait="5000"
+            driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+            password="123456"
+            url="jdbc:sqlserver://localhost:1433;DatabaseName=Hotel"/>
+</Context>
