@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>联系我们</title>
+    <title>登录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -22,15 +22,12 @@
                         </div>
                         <div class="header-phone"><i class="fa fa-phone"></i> <a href="#">12345678</a></div>
                     </div>
-                    <!--<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                      <div class="header-social pull-right">
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                      </div>-->
-                    <!--</div>-->
+                    <div class="col-lg-3 col-md-8 col-sm-8 col-xs-12 pull-right">
+                        <div class="header-social pull-right">
+                            <a href="register.html">注册</a>
+                            <a href="login.html">登陆</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -54,7 +51,6 @@
                                 <ul class="nav navbar-nav navbar-right">
                                     <li><a href="index.html">主页</a></li>
                                     <li><a href="about-us.html">关于我们</a></li>
-                                    <li><a href="contacts.html">联系我们</a></li>
                                     <li><a href="best-rooms.html">房间介绍</a></li>
                                     <li><a href="best-rooms-detail.html">房间预定</a></li>
                                 </ul>
@@ -71,12 +67,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="h1">联系我们</h1>
+                    <h1 class="h1">登录</h1>
                 </div>
                 <div class="col-md-6">
                     <ol class="breadcrumb">
                         <li><a href="#">主页</a><i class="fa fa-angle-right"></i></li>
-                        <li class="active">联系我们</li>
+                        <li class="active">登录</li>
                     </ol>
                 </div>
             </div>
@@ -86,7 +82,7 @@
     <section class="contact-block">
         <div class="container">
             <div class="contact-block_form">
-                <div class="row">
+               <!-- <div class="row">
                     <div class="contact-block_info">
                         <div class="col-md-4">
                             <div class="contact-block_i">
@@ -113,38 +109,48 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row marg50">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h2 class="h2">Drop Us Some Lines...</h2></div>
+                </div>-->
+                <div class="container-fluid marg50">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h2 class="h2">请填写些必要信息...</h2></div>
                     <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
                     <div class="col-lg-8 col-md-8 col-sm-11 col-xs-11">
                         <form action="mail.php" method="POST" class="form-horizontal form-wizzard">
                             <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
                                     <div id="name-group" class="form-group">
-                                        <input type="text" name="name" class="form-control"
-                                               placeholder="Enter your name ...">
+                                        <label>用户名</label>
+                                        <input type="text" name="username" class="form-control"
+                                               placeholder="请输入您的用户名:">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
                                     <div id="surname-group" class="form-group">
-                                        <input type="text" name="name" class="form-control"
-                                               placeholder="Enter your surname ...">
+                                        <label>密码</label>
+                                        <input type="password" name="password" class="form-control"
+                                               placeholder="请输入密码:">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <!--<div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
                                     <div id="phone-group" class="form-group">
-                                        <input type="tel" name="name" class="form-control"
-                                               placeholder="Enter your phone number ...">
+                                        <label>真实姓名</label>
+                                        <input type="text" name="name" class="form-control"
+                                               placeholder="请输入您的真实姓名:">
                                     </div>
                                 </div>
+                                <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
+                                    <div id="id-group" class="form-group">
+                                        <label>身份证</label>
+                                        <input type="text" name="name" class="form-control"
+                                               placeholder="请输入您的身份证号:">
+                                    </div>
+                                </div>-->
                             </div>
                             <div id="comment-group" class="form-group">
-                            <textarea rows="10" name="comment" class="form-control"
-                                      placeholder="Additional note type here ..."></textarea>
+                           <!-- <textarea rows="10" name="comment" class="form-control"
+                                      placeholder="Additional note type here ..."></textarea>-->
                             </div>
                             <div class="form-group text-center">
-                                <input type="submit" value="Send message" class="btn btn-default">
+                                <input type="submit" value="登录" class="btn btn-default">
                             </div>
                         </form>
                     </div>
