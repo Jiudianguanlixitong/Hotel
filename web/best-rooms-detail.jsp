@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿<%@ page contentType="text/html; charset=UTF-8" %>
+<!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <head>
     <meta charset="utf-8">
@@ -24,8 +25,8 @@
                     </div>
                     <div class="col-lg-3 col-md-8 col-sm-8 col-xs-12 pull-right">
                         <div class="header-social pull-right">
-                            <a href="register.html">注册</a>
-                            <a href="login.html">登陆</a>
+                            <a href="register.jsp">注册</a>
+                            <a href="login.jsp">登陆</a>
                         </div>
                     </div>
                 </div>
@@ -36,7 +37,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-3">
-                            <div class="logo"><a href="index.html" class="navbar-brand page-scroll"><img
+                            <div class="logo"><a href="index.jsp" class="navbar-brand page-scroll"><img
                                     src="images/logo/logo.png" alt="logo"></a></div>
                         </div>
                         <div class="col-lg-9">
@@ -48,10 +49,10 @@
                             </div>
                             <div class="collapse navbar-collapse navbar-main-collapse">
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="index.html">主页</a></li>
-                                    <li><a href="about-us.html">关于我们</a></li>
-                                    <li><a href="best-rooms.html">房间介绍</a></li>
-                                    <li><a href="best-rooms-detail.html">房间预定</a></li>
+                                    <li><a href="index.jsp">主页</a></li>
+                                    <li><a href="about-us.jsp">关于我们</a></li>
+                                    <li><a href="best-rooms.jsp">房间介绍</a></li>
+                                    <li><a href="best-rooms-detail.jsp">房间预定</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -202,11 +203,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/1.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.html"></a></div>
+                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.html">Grand super LUX</a></div>
+                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Grand super LUX</a></div>
                             <div class="best-room_desc">
                                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                                 blanditiis praesentium voluptatum deleniti atque corrupti quos
@@ -221,11 +222,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/2.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.html"></a></div>
+                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.html">Special spa room</a></div>
+                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Special spa room</a></div>
                             <div class="best-room_desc">
                                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                                 blanditiis praesentium voluptatum deleniti atque corrupti quos
@@ -240,11 +241,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/3.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.html"></a></div>
+                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.html">President double LUXE</a></div>
+                            <div class="best-room_t"><a href="best-rooms-detail.jsp">President double LUXE</a></div>
                             <div class="best-room_desc">
                                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                                 blanditiis praesentium voluptatum deleniti atque corrupti quos
@@ -259,11 +260,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/4.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.html"></a></div>
+                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.html">Grand super LUX</a></div>
+                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Grand super LUX</a></div>
                             <div class="best-room_desc">
                                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                                 blanditiis praesentium voluptatum deleniti atque corrupti quos
@@ -278,11 +279,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/5.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.html"></a></div>
+                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.html">Special spa room</a></div>
+                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Special spa room</a></div>
                             <div class="best-room_desc">
                                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                                 blanditiis praesentium voluptatum deleniti atque corrupti quos
@@ -297,11 +298,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/6.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.html"></a></div>
+                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.html">President double LUXE</a></div>
+                            <div class="best-room_t"><a href="best-rooms-detail.jsp">President double LUXE</a></div>
                             <div class="best-room_desc">
                                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                                 blanditiis praesentium voluptatum deleniti atque corrupti quos
@@ -318,13 +319,13 @@
     </section>-->
     <!-- /choose best rooms -->
     <!-- footer -->
-    <footer class="footer">
+<%--    <footer class="footer">
         <div class="footer-top">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <div class="footer-top_logo"><a href="index.html"><img src="images/logo/logo.png"
-                                                                               alt="Footer logo"></a></div>
+                        <div class="footer-top_logo"><a href="index.jsp"><img src="images/logo/logo.png"
+                                                                              alt="Footer logo"></a></div>
                         <div class="footer-top_txt">
                             <p>Continual delighted as elsewhere am convinced unfeeling. Introduced stimulated attachment
                                 no by projection. To lady whom my mile sold four need introduced.</p>
@@ -402,7 +403,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="footer-bottom_links">
-                            <a class="active" href="index.html">Home</a>
+                            <a class="active" href="index.jsp">Home</a>
                             <a href="gallery.html">Gallery</a>
                             <a href="blog.html">Blog</a>
                             <a href="wizzard-step1.html">Reservation</a>
@@ -412,7 +413,7 @@
                 </div>
             </div>
         </div>-->
-    </footer>
+    </footer>--%>
 </div>
 <!-- /footer -->
 <!-- Scripts -->

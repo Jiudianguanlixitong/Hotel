@@ -1,35 +1,25 @@
 package com.listener;
-
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
-
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletContextAttributeListener;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
-import javax.sql.DataSource;
+import javax.sql.*;
 import java.util.Date;
+import javax.servlet.*;
+import javax.naming.*;
+import javax.servlet.annotation.WebListener;
 
 @WebListener
 public class ContextListener implements ServletContextListener,
-        ServletContextAttributeListener {
-    public ServletContext context = null;
-
-    public void contextInitialized(ServletContextEvent sce) {
-        System.out.println("Now is On");
-        Context ctx;
+        ServletContextAttributeListener{
+    private ServletContext context=null;
+    public void contextInitialized(ServletContextEvent sce){
+        Context ctx ;
         DataSource dataSource = null;
         context = sce.getServletContext();
-        try {
+        try{
             ctx = new InitialContext();
-            dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/SQLServer");
-        } catch (NamingException ne) {
-            context.log("Exception:" + ne);
+            dataSource = (DataSource)ctx.lookup("java:comp/env/jdbc/SQLServer");
+        }catch(NamingException ne){
+            context.log("Exception:"+ne);
         }
-        context.setAttribute("dataSource", dataSource);   // 添加属性
-        context.log("应用程序已启动：" + new Date());
+        context.setAttribute("dataSource",dataSource);   // 添加属性
+        context.log("应用程序已启动："+new Date());
     }
 }

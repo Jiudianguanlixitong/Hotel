@@ -25,6 +25,24 @@ public class Room_Info {
         this.book_status = book_status;
     }
 
+    public Room_Info(int room_id, int floors, String face, String feature, String kind) {
+        this.room_id = room_id;
+        this.floors = floors;
+        this.face = face;
+        this.feature = feature;
+        this.kind = kind;
+    }
+
+    public Room_Info(int room_id, int floors, String face, String feature, String kind, String tidy, String book_status) {
+        this.room_id = room_id;
+        this.floors = floors;
+        this.face = face;
+        this.feature = feature;
+        this.kind = kind;
+        this.tidy = tidy;
+        this.book_status = book_status;
+    }
+
     public Room_Info() {
         super();
     }

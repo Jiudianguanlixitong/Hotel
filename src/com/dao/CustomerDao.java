@@ -1,21 +1,21 @@
 package com.dao;
 
 import com.domain.Customer;
-import com.listener.ContextListener;
 
-import javax.servlet.http.HttpServlet;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class customerDao extends HttpServlet {
-    //从上下文对象中获取数据源对象
-    ContextListener contextListener = new ContextListener();
-    DataSource dataSource = (DataSource) contextListener.context.getAttribute("dataSource");
+public class CustomerDao extends Base {
+    DataSource dataSource = super.dataSource;
 
+    public CustomerDao(DataSource dataSource) {
+        super(dataSource);
+    }
     //用户注册
+
     public boolean addCustomer(Customer customer) {
         String sql = "insert into Customer values(?,?,?,?,?)";
         PreparedStatement pstmt;

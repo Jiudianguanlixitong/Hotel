@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+﻿<%@ page contentType="text/html; charset=UTF-8" %>
+<!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>登录</title>
+    <title>注册</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -24,8 +25,8 @@
                     </div>
                     <div class="col-lg-3 col-md-8 col-sm-8 col-xs-12 pull-right">
                         <div class="header-social pull-right">
-                            <a href="register.html">注册</a>
-                            <a href="login.html">登陆</a>
+                            <a href="register.jsp">注册</a>
+                            <a href="login.jsp">登陆</a>
                         </div>
                     </div>
                 </div>
@@ -36,7 +37,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-3">
-                            <div class="logo"><a href="index.html" class="navbar-brand page-scroll"><img
+                            <div class="logo"><a href="index.jsp" class="navbar-brand page-scroll"><img
                                     src="images/logo/logo.png" alt="logo"></a></div>
                         </div>
                         <div class="col-lg-9">
@@ -49,10 +50,10 @@
                             </div>
                             <div class="collapse navbar-collapse navbar-main-collapse">
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="index.html">主页</a></li>
-                                    <li><a href="about-us.html">关于我们</a></li>
-                                    <li><a href="best-rooms.html">房间介绍</a></li>
-                                    <li><a href="best-rooms-detail.html">房间预定</a></li>
+                                    <li><a href="index.jsp">主页</a></li>
+                                    <li><a href="about-us.jsp">关于我们</a></li>
+                                    <li><a href="best-rooms.jsp">房间介绍</a></li>
+                                    <li><a href="best-rooms-detail.jsp">房间预定</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -67,12 +68,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="h1">登录</h1>
+                    <h1 class="h1">注册</h1>
                 </div>
                 <div class="col-md-6">
                     <ol class="breadcrumb">
                         <li><a href="#">主页</a><i class="fa fa-angle-right"></i></li>
-                        <li class="active">登录</li>
+                        <li class="active">注册</li>
                     </ol>
                 </div>
             </div>
@@ -82,39 +83,39 @@
     <section class="contact-block">
         <div class="container">
             <div class="contact-block_form">
-               <!-- <div class="row">
-                    <div class="contact-block_info">
-                        <div class="col-md-4">
-                            <div class="contact-block_i">
-                                <div class="info_icon">
-                                    <i class="fa fa-home"></i>
-                                </div>
-                                <div class="info_txt"><span>455 Martinson, Los Angeles</span></div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="contact-block_i">
-                                <div class="info_icon">
-                                    <i class="fa fa-envelope-o"></i>
-                                </div>
-                                <div class="info_txt"><span>support@email.com</span></div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="contact-block_i">
-                                <div class="info_icon">
-                                    <i class="fa fa-phone"></i>
-                                </div>
-                                <div class="info_txt"><span>8 (043) 567 - 89 - 30</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
+                <!-- <div class="row">
+                     <div class="contact-block_info">
+                         <div class="col-md-4">
+                             <div class="contact-block_i">
+                                 <div class="info_icon">
+                                     <i class="fa fa-home"></i>
+                                 </div>
+                                 <div class="info_txt"><span>455 Martinson, Los Angeles</span></div>
+                             </div>
+                         </div>
+                         <div class="col-md-4">
+                             <div class="contact-block_i">
+                                 <div class="info_icon">
+                                     <i class="fa fa-envelope-o"></i>
+                                 </div>
+                                 <div class="info_txt"><span>support@email.com</span></div>
+                             </div>
+                         </div>
+                         <div class="col-md-4">
+                             <div class="contact-block_i">
+                                 <div class="info_icon">
+                                     <i class="fa fa-phone"></i>
+                                 </div>
+                                 <div class="info_txt"><span>8 (043) 567 - 89 - 30</span></div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>-->
                 <div class="container-fluid marg50">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h2 class="h2">请填写些必要信息...</h2></div>
                     <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
                     <div class="col-lg-8 col-md-8 col-sm-11 col-xs-11">
-                        <form action="mail.php" method="POST" class="form-horizontal form-wizzard">
+                        <form action="Register.do" method="POST" class="form-horizontal form-wizzard">
                             <div class="row">
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
                                     <div id="name-group" class="form-group">
@@ -130,7 +131,7 @@
                                                placeholder="请输入密码:">
                                     </div>
                                 </div>
-                                <!--<div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
+                                <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
                                     <div id="phone-group" class="form-group">
                                         <label>真实姓名</label>
                                         <input type="text" name="name" class="form-control"
@@ -140,17 +141,17 @@
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
                                     <div id="id-group" class="form-group">
                                         <label>身份证</label>
-                                        <input type="text" name="name" class="form-control"
+                                        <input type="text" name="ID" class="form-control"
                                                placeholder="请输入您的身份证号:">
                                     </div>
-                                </div>-->
+                                </div>
                             </div>
                             <div id="comment-group" class="form-group">
-                           <!-- <textarea rows="10" name="comment" class="form-control"
-                                      placeholder="Additional note type here ..."></textarea>-->
+                                <!-- <textarea rows="10" name="comment" class="form-control"
+                                           placeholder="Additional note type here ..."></textarea>-->
                             </div>
                             <div class="form-group text-center">
-                                <input type="submit" value="登录" class="btn btn-default">
+                                <input type="submit" value="注册" class="btn btn-default">
                             </div>
                         </form>
                     </div>
@@ -164,13 +165,13 @@
     </section>-->
     <!-- /main wrapper -->
     <!-- footer -->
-    <footer class="footer">
+<%--    <footer class="footer">
         <div class="footer-top">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <div class="footer-top_logo"><a href="index.html"><img src="images/logo/logo.png"
-                                                                               alt="Footer logo"></a>
+                        <div class="footer-top_logo"><a href="index.jsp"><img src="images/logo/logo.png"
+                                                                              alt="Footer logo"></a>
                         </div>
                         <div class="footer-top_txt">
                             <p>Continual delighted as elsewhere am convinced unfeeling. Introduced stimulated attachment
@@ -250,7 +251,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="footer-bottom_links">
-                            <a class="active" href="index.html">Home</a>
+                            <a class="active" href="index.jsp">Home</a>
                             <a href="gallery.html">Gallery</a>
                             <a href="blog.html">Blog</a>
                             <a href="wizzard-step1.html">Reservation</a>
@@ -260,7 +261,7 @@
                 </div>
             </div>
         </div>-->
-    </footer>
+    </footer>--%>
 </div>
 <!-- /footer -->
 <!-- Scripts -->

@@ -13,8 +13,13 @@ import java.sql.SQLException;
 
 @WebServlet("/TestConnect")
 public class TestContext extends HttpServlet {
+
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    }
+
+    public TestContext() {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
