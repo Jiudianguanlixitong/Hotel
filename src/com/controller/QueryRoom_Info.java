@@ -40,7 +40,7 @@ public class QueryRoom_Info extends HttpServlet {
             e.printStackTrace();
         }
         request.setAttribute("room_infos", room_infos);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/displayRoom_Info.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/roomBook.jsp");
         requestDispatcher.forward(request, response);
     }
 
