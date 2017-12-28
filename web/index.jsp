@@ -1,4 +1,13 @@
 ﻿<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page import="java.util.ArrayList" %>
+<%
+    ArrayList<String[]> roomType = new ArrayList<>();
+    roomType.add(new String[]{"双人房", "￥150"});
+    roomType.add(new String[]{"单人房", "￥100"});
+    roomType.add(new String[]{"家庭房", "￥200"});
+    roomType.add(new String[]{"豪华房", "￥400"});
+    session.setAttribute("room", roomType);
+%>
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <head>
@@ -181,16 +190,16 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/1.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a href="best-rooms-detail.jsp?type=${room[0][0]}&price=${room[0][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Grand Super Luxury</a></div>
+                            <div class="best-room_t"><a href="best-rooms-detail.jsp?type=${room[0][0]}&price=${room[0][1]}">${room[0][0]}</a></div>
                             <div class="best-room_desc">Difficulty on insensible reasonable in. From as went he they.
                                 Preference themselves me as thoroughly partiality considered.
                             </div>
                             <div class="best-room_price">
-                                <span>$99</span> / two days
+                                <span>${room[0][1]}</span> / two days
                             </div>
                         </div>
                     </li>
@@ -198,16 +207,16 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/2.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a href="best-rooms-detail.jsp?type=${room[1][0]}&price=${room[1][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Special Spa Room</a></div>
+                            <div class="best-room_t"><a href="best-rooms-detail.jsp?best-rooms-detail.jsp?type=${room[1][0]}&price=${room[1][1]}">${room[1][0]}</a></div>
                             <div class="best-room_desc">Difficulty on insensible reasonable in. From as went he they.
                                 Preference themselves me as thoroughly partiality considered.
                             </div>
                             <div class="best-room_price">
-                                <span>$129</span> / two days
+                                <span>${room[1][1]}</span> / two days
                             </div>
                         </div>
                     </li>
@@ -215,16 +224,16 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/3.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a href="best-rooms-detail.jsp?type=${room[2][0]}&price=${room[2][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">President Double Luxury</a></div>
+                            <div class="best-room_t"><a href="best-rooms-detail.jsp?type=${room[2][0]}&price=${room[2][1]}">${room[2][0]}</a></div>
                             <div class="best-room_desc">Difficulty on insensible reasonable in. From as went he they.
                                 Preference themselves me as thoroughly partiality considered.
                             </div>
                             <div class="best-room_price">
-                                <span>$349</span> / two days
+                                <span>${room[2][1]}</span> / two days
                             </div>
                         </div>
                     </li>
@@ -232,16 +241,16 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/4.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a href="best-rooms-detail.jsp?type=${room[3][0]}&price=${room[3][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Grand Super Luxury</a></div>
+                            <div class="best-room_t"><a href="best-rooms-detail.jsp?type=${room[3][0]}&price=${room[3][1]}">${room[3][0]}</a></div>
                             <div class="best-room_desc">Difficulty on insensible reasonable in. From as went he they.
                                 Preference themselves me as thoroughly partiality considered.
                             </div>
                             <div class="best-room_price">
-                                <span>$49</span> / two days
+                                <span>${room[3][1]}</span> / two days
                             </div>
                         </div>
                     </li>
