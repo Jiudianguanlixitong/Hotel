@@ -151,7 +151,7 @@ body {
     font-family: 'icomoon';
     display: block;
     line-height: 50px;
-    width: 100px;
+    width: 50px;
     text-align: center;
     text-decoration: none;
     color: rgb(102, 102, 102);
@@ -206,7 +206,13 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/*
+.mainContent div:nth-child(1) h2:before {
+    content: "\63";
+}
+
+.mainContent div:nth-child(2) h2:before {
+    content: "\64";
+}
 
 .mainContent div:nth-child(3) h2:before {
     content: "\62";
@@ -215,13 +221,7 @@ body {
 .mainContent div:nth-child(4) h2:before {
     content: "\65";
 }
-.mainContent div:nth-child(1) h2:before {
-    content: "\63";
-}
 
-.mainContent div:nth-child(2) h2:before {
-    content: "\64";
-}
 .mainContent div:nth-child(5) h2:before {
     content: "\74";
 }
@@ -249,7 +249,6 @@ body {
 .mainContent div:nth-child(11) h2:before {
     content: "\75";
 }
-*/
 
 #dashboard > div {
     border: 1px solid rgb(235, 235, 235);

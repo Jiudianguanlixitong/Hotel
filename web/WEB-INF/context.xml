@@ -9,6 +9,6 @@ maxIdle="2"
 username="sa"
 maxwait="5000"
 driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-password="123456789"
+password="LJ15817731907"
 url="jdbc:sqlserver://localhost:1433;DatabaseName=Hotel"/>
 </Context>

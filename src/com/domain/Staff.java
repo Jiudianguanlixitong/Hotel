@@ -5,16 +5,6 @@ public class Staff {
     private String pass;
     private String position;
 
-    public Staff(String username, String pass, String position) {
-        this.username = username;
-        this.pass = pass;
-        this.position = position;
-    }
-
-    public Staff() {
-        super();
-    }
-
     public String getUsername() {
         return username;
     }
@@ -37,5 +27,15 @@ public class Staff {
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    public Staff(String username, String pass, String position) {
+        this.username = username;
+        this.pass = pass;
+        this.position = position;
+    }
+
+    public Staff() {
+        super();
     }
 }

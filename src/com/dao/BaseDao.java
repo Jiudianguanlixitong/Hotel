@@ -1,21 +1,24 @@
 package com.dao;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.servlet.ServletContext;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.sql.DataSource;
 import java.sql.Connection;
 
-@WebServlet("/Context")
-public class BaseDao extends HttpServlet {
+public class BaseDao{
     DataSource dataSource;
-
-    BaseDao() {
-        ServletContext context = getServletContext();
-        dataSource = (DataSource) context.getAttribute("dataSource");
+    public BaseDao(){
+        try {
+            Context context=new InitialContext();
+            dataSource=(DataSource)context.lookup("java:comp/env/jdbc/sampleDS");
+        } catch (NamingException e) {
+            e.printStackTrace();
+        }
     }
-
-    public Connection getConnection() throws Exception {
+    public Connection getConnection()throws Exception{
         return dataSource.getConnection();
     }
 }

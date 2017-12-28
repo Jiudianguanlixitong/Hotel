@@ -12,6 +12,7 @@ public class Room_Info {
     private Date out_day;
     private String tidy;
     private String book_status;
+    private int price;
 
     public Room_Info(int room_id, int floors, String face, String feature, String kind, Date in_day, Date out_day, String tidy, String book_status) {
         this.room_id = room_id;
@@ -25,12 +26,13 @@ public class Room_Info {
         this.book_status = book_status;
     }
 
-    public Room_Info(int room_id, int floors, String face, String feature, String kind) {
+    public Room_Info(int room_id, int floors, String face, String feature, String kind, int price) {
         this.room_id = room_id;
         this.floors = floors;
         this.face = face;
         this.feature = feature;
         this.kind = kind;
+        this.price = price;
     }
 
     public Room_Info(int room_id, int floors, String face, String feature, String kind, String tidy, String book_status) {
@@ -119,4 +121,11 @@ public class Room_Info {
         this.book_status = book_status;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
 }
