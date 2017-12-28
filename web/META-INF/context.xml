@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context reloadable="true">
+<Resource
+name="jdbc/sampleDS"
+type="javax.sql.DataSource"
+auth="Container"
+maxActive="4"
+maxIdle="2"
+username="sa"
+maxwait="5000"
+driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+password="123456789"
+url="jdbc:sqlserver://localhost:1433;DatabaseName=Hotel"/>
+</Context>
