@@ -22,11 +22,11 @@ public class Register extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String username = request.getParameter("username").trim();
         String password = request.getParameter("password").trim();
-        CustomerDao customerDao = new CustomerDao((DataSource) context.getAttribute("dataSource"));
+        //CustomerDao customerDao = new CustomerDao((DataSource) context.getAttribute("dataSource"));
         Customer customer = new Customer();
         customer.setName(username);
         customer.setPass(password);
-        customerDao.addCustomer(customer);
+        //customerDao.addCustomer(customer);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

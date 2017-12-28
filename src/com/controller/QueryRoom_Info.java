@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Date;
-import java.text.Format;
 import java.text.ParseException;
 import java.util.ArrayList;
 
@@ -19,31 +17,31 @@ import java.util.ArrayList;
 public class QueryRoom_Info extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        Room_infoDao room_infoDao=new Room_infoDao();
-        ArrayList<Room_Info> room_infos=new ArrayList<Room_Info>();
-        String in_day=request.getParameter("in_day");
-        String out_day=request.getParameter("out_day");
-        String kind=request.getParameter("kind");
+        Room_infoDao room_infoDao = new Room_infoDao();
+        ArrayList<Room_Info> room_infos = new ArrayList<Room_Info>();
+        String in_day = request.getParameter("in_day");
+        String out_day = request.getParameter("out_day");
+        String kind = request.getParameter("kind");
         java.text.SimpleDateFormat format = new java.text.SimpleDateFormat("yyyy-MM-dd");
         try {
-            java.util.Date beginDate= format.parse(in_day);
-            java.util.Date endDate= format.parse(out_day);
-            long day=(endDate.getTime()-beginDate.getTime())/(24*60*60*1000);
-            System.out.println("in_day="+in_day);
-            System.out.println("out_day="+out_day);
-            System.out.println("kind="+kind);
-            System.out.println("相隔的天数="+day);
-            if("all".equals(kind)){
-                room_infos=room_infoDao.queryRoom_Info_time(in_day,out_day);
-            }else{
-                room_infos=room_infoDao.queryAllRoom_Info(in_day,out_day,kind);
+            java.util.Date beginDate = format.parse(in_day);
+            java.util.Date endDate = format.parse(out_day);
+            long day = (endDate.getTime() - beginDate.getTime()) / (24 * 60 * 60 * 1000);
+            System.out.println("in_day=" + in_day);
+            System.out.println("out_day=" + out_day);
+            System.out.println("kind=" + kind);
+            System.out.println("相隔的天数=" + day);
+            if ("all".equals(kind)) {
+                room_infos = room_infoDao.queryRoom_Info_time(in_day, out_day);
+            } else {
+                room_infos = room_infoDao.queryAllRoom_Info(in_day, out_day, kind);
             }
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        request.setAttribute("room_infos",room_infos);
-        RequestDispatcher requestDispatcher=request.getRequestDispatcher("/displayRoom_Info.jsp");
-        requestDispatcher.forward(request,response);
+        request.setAttribute("room_infos", room_infos);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/displayRoom_Info.jsp");
+        requestDispatcher.forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

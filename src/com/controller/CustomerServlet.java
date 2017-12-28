@@ -1,6 +1,5 @@
 package com.controller;
 
-import com.domain.Customer;
 import com.dao.CustomerDao;
 
 import javax.servlet.ServletException;
@@ -14,12 +13,12 @@ import java.io.IOException;
 public class CustomerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //用户登录模块
-        String username=request.getParameter("username");
-        String password=request.getParameter("password");
-        CustomerDao customerDao=new CustomerDao();
-        if(customerDao.testCustomer(username,password)){
-            response.sendRedirect("index.html");
-        }else response.sendRedirect("error.html");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        CustomerDao customerDao = new CustomerDao();
+        if (customerDao.testCustomer(username, password)) {
+            response.sendRedirect("index.jsp");
+        } else response.sendRedirect("error.html");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

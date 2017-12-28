@@ -1,12 +1,13 @@
 ﻿<%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.util.ArrayList" %>
 <%
-    ArrayList<String[]> roomType = new ArrayList<>();
-    roomType.add(new String[]{"双人房", "￥150"});
-    roomType.add(new String[]{"单人房", "￥100"});
-    roomType.add(new String[]{"家庭房", "￥200"});
-    roomType.add(new String[]{"豪华房", "￥400"});
-    session.setAttribute("room", roomType);
+ArrayList
+<String[]> roomType = new ArrayList<>();
+roomType.add(new String[]{"双人房", "￥150"});
+roomType.add(new String[]{"单人房", "￥100"});
+roomType.add(new String[]{"家庭房", "￥200"});
+roomType.add(new String[]{"豪华房", "￥400"});
+session.setAttribute("room", roomType);
 %>
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
@@ -93,14 +94,16 @@
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label>入住时间</label>
-                                        <input class="form-control __plannerInput" name="in_day" id="datetimepicker1" type="date"
+                                        <input class="form-control __plannerInput" name="in_day" id="datetimepicker1"
+                                               type="date"
                                                value="2017-12-20" placeholder="2017-12-20">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label>离店时间</label>
-                                        <input class="form-control __plannerInput" name="out_day" id="datetimepicker2" type="date"
+                                        <input class="form-control __plannerInput" name="out_day" id="datetimepicker2"
+                                               type="date"
                                                value="2017-12-21" placeholder="2017-12-21">
                                     </div>
                                 </div>
@@ -193,11 +196,14 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/1.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp?type=${room[0][0]}&price=${room[0][1]}"></a></div>
+                                <div class="overlay_icn"><a
+                                        href="best-rooms-detail.jsp?type=${room[0][0]}&price=${room[0][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp?type=${room[0][0]}&price=${room[0][1]}">${room[0][0]}</a></div>
+                            <div class="best-room_t"><a
+                                    href="best-rooms-detail.jsp?type=${room[0][0]}&price=${room[0][1]}">${room[0][0]}</a>
+                            </div>
                             <div class="best-room_desc">Difficulty on insensible reasonable in. From as went he they.
                                 Preference themselves me as thoroughly partiality considered.
                             </div>
@@ -210,11 +216,14 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/2.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp?type=${room[1][0]}&price=${room[1][1]}"></a></div>
+                                <div class="overlay_icn"><a
+                                        href="best-rooms-detail.jsp?type=${room[1][0]}&price=${room[1][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp?best-rooms-detail.jsp?type=${room[1][0]}&price=${room[1][1]}">${room[1][0]}</a></div>
+                            <div class="best-room_t"><a
+                                    href="best-rooms-detail.jsp?best-rooms-detail.jsp?type=${room[1][0]}&price=${room[1][1]}">${room[1][0]}</a>
+                            </div>
                             <div class="best-room_desc">Difficulty on insensible reasonable in. From as went he they.
                                 Preference themselves me as thoroughly partiality considered.
                             </div>
@@ -227,11 +236,14 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/3.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp?type=${room[2][0]}&price=${room[2][1]}"></a></div>
+                                <div class="overlay_icn"><a
+                                        href="best-rooms-detail.jsp?type=${room[2][0]}&price=${room[2][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp?type=${room[2][0]}&price=${room[2][1]}">${room[2][0]}</a></div>
+                            <div class="best-room_t"><a
+                                    href="best-rooms-detail.jsp?type=${room[2][0]}&price=${room[2][1]}">${room[2][0]}</a>
+                            </div>
                             <div class="best-room_desc">Difficulty on insensible reasonable in. From as went he they.
                                 Preference themselves me as thoroughly partiality considered.
                             </div>
@@ -244,11 +256,14 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/4.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp?type=${room[3][0]}&price=${room[3][1]}"></a></div>
+                                <div class="overlay_icn"><a
+                                        href="best-rooms-detail.jsp?type=${room[3][0]}&price=${room[3][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp?type=${room[3][0]}&price=${room[3][1]}">${room[3][0]}</a></div>
+                            <div class="best-room_t"><a
+                                    href="best-rooms-detail.jsp?type=${room[3][0]}&price=${room[3][1]}">${room[3][0]}</a>
+                            </div>
                             <div class="best-room_desc">Difficulty on insensible reasonable in. From as went he they.
                                 Preference themselves me as thoroughly partiality considered.
                             </div>
@@ -398,101 +413,103 @@
     <!-- /map -->
     <!-- /main wrapper -->
     <!-- footer -->
-    <%--    <footer class="footer">
-            <div class="footer-top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="footer-top_logo"><a href="index.jsp"><img src="images/logo/logo.png"
-                                                                                  alt="Footer logo"></a></div>
-                            <div class="footer-top_txt">
-                                <p>Continual delighted as elsewhere am convinced unfeeling. Introduced stimulated attachment
-                                    no by projection. To lady whom my mile sold four need introduced.</p>
+    <%--
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="footer-top_logo"><a href="index.jsp"><img src="images/logo/logo.png"
+                                                                              alt="Footer logo"></a></div>
+                        <div class="footer-top_txt">
+                            <p>Continual delighted as elsewhere am convinced unfeeling. Introduced stimulated attachment
+                                no by projection. To lady whom my mile sold four need introduced.</p>
+                        </div>
+                        <div class="footer-top_address">
+                            <div><i class="fa fa-phone"></i> Phone: <span>8 (043) 567 - 89 - 30</span></div>
+                            <div><i class="fa fa-envelope-o"></i> E-mail: <span><a href="mailto:support@email.com">support@email.com</a></span>
                             </div>
-                            <div class="footer-top_address">
-                                <div><i class="fa fa-phone"></i> Phone: <span>8 (043) 567 - 89 - 30</span></div>
-                                <div><i class="fa fa-envelope-o"></i> E-mail: <span><a href="mailto:support@email.com">support@email.com</a></span>
+                            <div><i class="fa fa-home"></i> Location: <span>455 Martinson, Los Angeles</span></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="footer-top_rooms">
+                            <ul>
+                                <li>
+                                    <div class="rooms_img">
+                                        <a href="blog-detail.html"><img src="images/footer/1.jpg" alt=""></a>
+                                    </div>
+                                    <div class="rooms_info">
+                                        <div class="rooms_t"><a href="blog-detail.html">Grang Super Luxury</a></div>
+                                        <div class="rooms_props">3 Bed / Wi-Fi / 2 - Bathroom<span>$119</span></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="rooms_img">
+                                        <a href="blog-detail.html"><img src="images/footer/2.jpg" alt=""></a>
+                                    </div>
+                                    <div class="rooms_info">
+                                        <div class="rooms_t"><a href="blog-detail.html">President Room</a></div>
+                                        <div class="rooms_props">4 Bed / Wi-Fi / 3 - Bathroom<span>$329</span></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="rooms_img">
+                                        <a href="blog-detail.html"><img src="images/footer/3.jpg" alt=""></a>
+                                    </div>
+                                    <div class="rooms_info">
+                                        <div class="rooms_t"><a href="blog-detail.html">Spa Double Room</a></div>
+                                        <div class="rooms_props">2 Bed / Wi-Fi / 2 - Bathroom<span>$749</span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 marg-sm-50 col-xs-12">
+                        <div class="footer-top_contact_form">
+                            <div class="contact_form_t">Contact Form</div>
+                            <form action="mail.php" method="POST" class="row form-horizontal form-wizzard">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" name="name" class="form-control" placeholder="Name ...">
                                 </div>
-                                <div><i class="fa fa-home"></i> Location: <span>455 Martinson, Los Angeles</span></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="footer-top_rooms">
-                                <ul>
-                                    <li>
-                                        <div class="rooms_img">
-                                            <a href="blog-detail.html"><img src="images/footer/1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="rooms_info">
-                                            <div class="rooms_t"><a href="blog-detail.html">Grang Super Luxury</a></div>
-                                            <div class="rooms_props">3 Bed / Wi-Fi / 2 - Bathroom<span>$119</span></div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="rooms_img">
-                                            <a href="blog-detail.html"><img src="images/footer/2.jpg" alt=""></a>
-                                        </div>
-                                        <div class="rooms_info">
-                                            <div class="rooms_t"><a href="blog-detail.html">President Room</a></div>
-                                            <div class="rooms_props">4 Bed / Wi-Fi / 3 - Bathroom<span>$329</span></div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="rooms_img">
-                                            <a href="blog-detail.html"><img src="images/footer/3.jpg" alt=""></a>
-                                        </div>
-                                        <div class="rooms_info">
-                                            <div class="rooms_t"><a href="blog-detail.html">Spa Double Room</a></div>
-                                            <div class="rooms_props">2 Bed / Wi-Fi / 2 - Bathroom<span>$749</span></div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 marg-sm-50 col-xs-12">
-                            <div class="footer-top_contact_form">
-                                <div class="contact_form_t">Contact Form</div>
-                                <form action="mail.php" method="POST" class="row form-horizontal form-wizzard">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" name="name" class="form-control" placeholder="Name ...">
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <input type="email" name="email" class="form-control" placeholder="Email ...">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <input type="email" name="email" class="form-control" placeholder="Email ...">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <textarea rows="6" name="message" class="form-control"
                                                   placeholder="Message ..."></textarea>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
-                                        <input type="submit" value="Send message" class="btn btn-default">
-                                    </div>
-                                </form>
-                            </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
+                                    <input type="submit" value="Send message" class="btn btn-default">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--<div class="footer-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="footer-bottom_copy">Copyright &copy; 2017.Company name All rights reserved.<a
-                                    target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
-                            </div>
+        </div>
+        <!--<div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="footer-bottom_copy">Copyright &copy; 2017.Company name All rights reserved.<a
+                                target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="footer-bottom_links">
-                                <a class="active" href="index.html">Home</a>
-                                <a href="gallery.html">Gallery</a>
-                                <a href="blog.html">Blog</a>
-                                <a href="wizzard-step1.html">Reservation</a>
-                                <a href="#">Purchase</a>
-                            </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="footer-bottom_links">
+                            <a class="active" href="index.html">Home</a>
+                            <a href="gallery.html">Gallery</a>
+                            <a href="blog.html">Blog</a>
+                            <a href="wizzard-step1.html">Reservation</a>
+                            <a href="#">Purchase</a>
                         </div>
                     </div>
                 </div>
-            </div>-->
-        </footer>--%>
+            </div>
+        </div>-->
+    </footer>
+    --%>
 </div>
 <!-- /footer -->
 <!-- Scripts -->

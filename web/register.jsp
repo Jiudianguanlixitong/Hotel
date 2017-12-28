@@ -115,33 +115,33 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h2 class="h2">请填写些必要信息...</h2></div>
                     <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
                     <div class="col-lg-8 col-md-8 col-sm-11 col-xs-11">
-                        <form action="Register.do" method="POST" class="form-horizontal form-wizzard">
+                        <form action="TestServlet" method="post" class="form-horizontal form-wizzard">
                             <div class="row">
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
                                     <div id="name-group" class="form-group">
                                         <label>用户名</label>
-                                        <input type="text" name="username" class="form-control"
+                                        <input type="text" name="new_username" class="form-control"
                                                placeholder="请输入您的用户名:">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
                                     <div id="surname-group" class="form-group">
                                         <label>密码</label>
-                                        <input type="password" name="password" class="form-control"
+                                        <input type="password" name="new_password" class="form-control"
                                                placeholder="请输入密码:">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
                                     <div id="phone-group" class="form-group">
                                         <label>真实姓名</label>
-                                        <input type="text" name="name" class="form-control"
+                                        <input type="text" name="new_name" class="form-control"
                                                placeholder="请输入您的真实姓名:">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
                                     <div id="id-group" class="form-group">
                                         <label>身份证</label>
-                                        <input type="text" name="ID" class="form-control"
+                                        <input type="text" name="new_id" class="form-control"
                                                placeholder="请输入您的身份证号:">
                                     </div>
                                 </div>
