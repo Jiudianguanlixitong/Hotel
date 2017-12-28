@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page import="java.util.ArrayList" %>
+<%
+ArrayList
+<String[]> roomType = new ArrayList<>();
+roomType.add(new String[]{"双人房", "￥150"});
+roomType.add(new String[]{"单人房", "￥100"});
+roomType.add(new String[]{"家庭房", "￥200"});
+roomType.add(new String[]{"豪华房", "￥400"});
+session.setAttribute("room", roomType);
+%>
+<!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <head>
     <meta charset="utf-8">
@@ -24,8 +35,8 @@
                     </div>
                     <div class="col-lg-3 col-md-8 col-sm-8 col-xs-12 pull-right">
                         <div class="header-social pull-right">
-                            <a href="register.html">注册</a>
-                            <a href="login.html">登陆</a>
+                            <a href="register.jsp">注册</a>
+                            <a href="login.jsp">登陆</a>
                         </div>
                     </div>
                 </div>
@@ -36,7 +47,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-3">
-                            <div class="logo"><a href="index.html" class="navbar-brand page-scroll"><img
+                            <div class="logo"><a href="index.jsp" class="navbar-brand page-scroll"><img
                                     src="images/logo/logo.png" alt="logo"></a></div>
                         </div>
                         <div class="col-lg-9">
@@ -48,10 +59,10 @@
                             </div>
                             <div class="collapse navbar-collapse navbar-main-collapse">
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="index.html">主页</a></li>
-                                    <li><a href="about-us.html">关于我们</a></li>
-                                    <li><a href="best-rooms.html">房间介绍</a></li>
-                                    <li><a href="best-rooms-detail.html">房间预定</a></li>
+                                    <li><a href="index.jsp">主页</a></li>
+                                    <li><a href="about-us.jsp">关于我们</a></li>
+                                    <li><a href="best-rooms.jsp">房间介绍</a></li>
+                                    <li><a href="best-rooms-detail.jsp">房间预定</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -83,14 +94,16 @@
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label>入住时间</label>
-                                        <input class="form-control __plannerInput" name="in_day" id="datetimepicker1" type="date"
+                                        <input class="form-control __plannerInput" name="in_day" id="datetimepicker1"
+                                               type="date"
                                                value="2017-12-20" placeholder="2017-12-20">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label>离店时间</label>
-                                        <input class="form-control __plannerInput" name="out_day" id="datetimepicker2" type="date"
+                                        <input class="form-control __plannerInput" name="out_day" id="datetimepicker2"
+                                               type="date"
                                                value="2017-12-21" placeholder="2017-12-21">
                                     </div>
                                 </div>
@@ -183,16 +196,19 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/1.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.html"></a></div>
+                                <div class="overlay_icn"><a
+                                        href="best-rooms-detail.jsp?type=${room[0][0]}&price=${room[0][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.html">Grand Super Luxury</a></div>
+                            <div class="best-room_t"><a
+                                    href="best-rooms-detail.jsp?type=${room[0][0]}&price=${room[0][1]}">${room[0][0]}</a>
+                            </div>
                             <div class="best-room_desc">Difficulty on insensible reasonable in. From as went he they.
                                 Preference themselves me as thoroughly partiality considered.
                             </div>
                             <div class="best-room_price">
-                                <span>$99</span> / two days
+                                <span>${room[0][1]}</span> / two days
                             </div>
                         </div>
                     </li>
@@ -200,16 +216,19 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/2.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.html"></a></div>
+                                <div class="overlay_icn"><a
+                                        href="best-rooms-detail.jsp?type=${room[1][0]}&price=${room[1][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.html">Special Spa Room</a></div>
+                            <div class="best-room_t"><a
+                                    href="best-rooms-detail.jsp?best-rooms-detail.jsp?type=${room[1][0]}&price=${room[1][1]}">${room[1][0]}</a>
+                            </div>
                             <div class="best-room_desc">Difficulty on insensible reasonable in. From as went he they.
                                 Preference themselves me as thoroughly partiality considered.
                             </div>
                             <div class="best-room_price">
-                                <span>$129</span> / two days
+                                <span>${room[1][1]}</span> / two days
                             </div>
                         </div>
                     </li>
@@ -217,16 +236,19 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/3.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.html"></a></div>
+                                <div class="overlay_icn"><a
+                                        href="best-rooms-detail.jsp?type=${room[2][0]}&price=${room[2][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.html">President Double Luxury</a></div>
+                            <div class="best-room_t"><a
+                                    href="best-rooms-detail.jsp?type=${room[2][0]}&price=${room[2][1]}">${room[2][0]}</a>
+                            </div>
                             <div class="best-room_desc">Difficulty on insensible reasonable in. From as went he they.
                                 Preference themselves me as thoroughly partiality considered.
                             </div>
                             <div class="best-room_price">
-                                <span>$349</span> / two days
+                                <span>${room[2][1]}</span> / two days
                             </div>
                         </div>
                     </li>
@@ -234,16 +256,19 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/4.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.html"></a></div>
+                                <div class="overlay_icn"><a
+                                        href="best-rooms-detail.jsp?type=${room[3][0]}&price=${room[3][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.html">Grand Super Luxury</a></div>
+                            <div class="best-room_t"><a
+                                    href="best-rooms-detail.jsp?type=${room[3][0]}&price=${room[3][1]}">${room[3][0]}</a>
+                            </div>
                             <div class="best-room_desc">Difficulty on insensible reasonable in. From as went he they.
                                 Preference themselves me as thoroughly partiality considered.
                             </div>
                             <div class="best-room_price">
-                                <span>$49</span> / two days
+                                <span>${room[3][1]}</span> / two days
                             </div>
                         </div>
                     </li>
@@ -251,11 +276,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/5.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.html"></a></div>
+                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.html">Special Spa Room</a></div>
+                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Special Spa Room</a></div>
                             <div class="best-room_desc">Difficulty on insensible reasonable in. From as went he they.
                                 Preference themselves me as thoroughly partiality considered.
                             </div>
@@ -268,11 +293,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/6.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.html"></a></div>
+                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.html">President Double Luxury</a></div>
+                            <div class="best-room_t"><a href="best-rooms-detail.jsp">President Double Luxury</a></div>
                             <div class="best-room_desc">Difficulty on insensible reasonable in. From as went he they.
                                 Preference themselves me as thoroughly partiality considered.
                             </div>
@@ -388,13 +413,14 @@
     <!-- /map -->
     <!-- /main wrapper -->
     <!-- footer -->
-   <!-- <footer class="footer">
+    <%--
+    <footer class="footer">
         <div class="footer-top">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <div class="footer-top_logo"><a href="index.html"><img src="images/logo/logo.png"
-                                                                               alt="Footer logo"></a></div>
+                        <div class="footer-top_logo"><a href="index.jsp"><img src="images/logo/logo.png"
+                                                                              alt="Footer logo"></a></div>
                         <div class="footer-top_txt">
                             <p>Continual delighted as elsewhere am convinced unfeeling. Introduced stimulated attachment
                                 no by projection. To lady whom my mile sold four need introduced.</p>
@@ -450,8 +476,8 @@
                                     <input type="email" name="email" class="form-control" placeholder="Email ...">
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <textarea rows="6" name="message" class="form-control"
-                                              placeholder="Message ..."></textarea>
+                                        <textarea rows="6" name="message" class="form-control"
+                                                  placeholder="Message ..."></textarea>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
                                     <input type="submit" value="Send message" class="btn btn-default">
@@ -461,7 +487,7 @@
                     </div>
                 </div>
             </div>
-        </div>-->
+        </div>
         <!--<div class="footer-bottom">
             <div class="container">
                 <div class="row">
@@ -482,7 +508,8 @@
                 </div>
             </div>
         </div>-->
-    <!--</footer>-->
+    </footer>
+    --%>
 </div>
 <!-- /footer -->
 <!-- Scripts -->
