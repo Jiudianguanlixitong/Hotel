@@ -1,13 +1,13 @@
 ﻿<%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.util.ArrayList" %>
 <%
-ArrayList
-<String[]> roomType = new ArrayList<>();
-roomType.add(new String[]{"双人房", "￥150"});
-roomType.add(new String[]{"单人房", "￥100"});
-roomType.add(new String[]{"家庭房", "￥200"});
-roomType.add(new String[]{"豪华房", "￥400"});
-session.setAttribute("room", roomType);
+    ArrayList
+            <String[]> roomType = new ArrayList<>();
+    roomType.add(new String[]{"双人房", "￥150"});
+    roomType.add(new String[]{"单人房", "￥100"});
+    roomType.add(new String[]{"家庭房", "￥200"});
+    roomType.add(new String[]{"豪华房", "￥400"});
+    session.setAttribute("room", roomType);
 %>
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">

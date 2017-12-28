@@ -12,7 +12,7 @@ public class BaseDao {
     public BaseDao() {
         try {
             Context context = new InitialContext();
-            dataSource = (DataSource) context.lookup("java:comp/env/jdbc/sampleDS");
+            dataSource = (DataSource) context.lookup("java:comp/env/jdbc/SQLServer");
         } catch (NamingException e) {
             e.printStackTrace();
         }
