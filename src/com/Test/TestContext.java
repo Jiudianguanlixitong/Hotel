@@ -15,11 +15,11 @@ import java.sql.SQLException;
 public class TestContext extends HttpServlet {
 
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    public TestContext() {
     }
 
-    public TestContext() {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

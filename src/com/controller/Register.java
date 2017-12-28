@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 import java.io.IOException;
 
-@WebServlet(name = "Register",urlPatterns = {"/Register.do"})
+@WebServlet(name = "Register", urlPatterns = {"/Register.do"})
 public class Register extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

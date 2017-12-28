@@ -1,7 +1,5 @@
 package com.controller;
 
-import com.dao.CustomerDao;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

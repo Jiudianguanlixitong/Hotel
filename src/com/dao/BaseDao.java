@@ -7,13 +7,15 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 
 @WebServlet("/Context")
-public class BaseDao extends HttpServlet{
+public class BaseDao extends HttpServlet {
     DataSource dataSource;
+
     BaseDao() {
         ServletContext context = getServletContext();
         dataSource = (DataSource) context.getAttribute("dataSource");
     }
-    public Connection getConnection()throws Exception{
+
+    public Connection getConnection() throws Exception {
         return dataSource.getConnection();
     }
 }

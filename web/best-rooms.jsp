@@ -1,4 +1,13 @@
 ﻿<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page import="java.util.ArrayList" %>
+<%
+    ArrayList<String[]> roomType = new ArrayList<>();
+    roomType.add(new String[]{"双人房", "￥150"});
+    roomType.add(new String[]{"单人房", "￥100"});
+    roomType.add(new String[]{"家庭房", "￥200"});
+    roomType.add(new String[]{"豪华房", "￥400"});
+    session.setAttribute("room", roomType);
+%>
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <head>
@@ -97,17 +106,20 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/1.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp?1"></a></div>
+                                <div class="overlay_icn"><a
+                                        href="best-rooms-detail.jsp?type=${room[0][0]}&price=${room[0][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Grand super LUX</a></div>
+                            <div class="best-room_t"><a
+                                    href="best-rooms-detail.jsp?type=${room[0][0]}&price=${room[0][1]}">${room[0][0]}</a>
+                            </div>
                             <div class="best-room_desc">Mr do raising article general norland my hastily. Its companions
                                 say uncommonly pianoforte favourable. Education affection consulted by mr attending he
                                 therefore.
                             </div>
                             <div class="best-room_price">
-                                <span>$49</span> / night
+                                <span>${room[0][1]}</span> / night
                             </div>
                             <div class="best-room_footer">
                                 <div class="footer_el __bed"><i class="fa fa-bed"></i> 2</div>
@@ -125,17 +137,20 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/4.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a
+                                        href="best-rooms-detail.jsp?type=${room[1][0]}&price=${room[1][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Grand super LUX</a></div>
+                            <div class="best-room_t"><a
+                                    href="best-rooms-detail.jsp?type=${room[1][0]}&price=${room[1][1]}">${room[1][0]}</a>
+                            </div>
                             <div class="best-room_desc">Mr do raising article general norland my hastily. Its companions
                                 say uncommonly pianoforte favourable. Education affection consulted by mr attending he
                                 therefore.
                             </div>
                             <div class="best-room_price">
-                                <span>$319</span> / night
+                                <span>${room[1][1]}</span> / night
                             </div>
                             <div class="best-room_footer">
                                 <div class="footer_el __bed"><i class="fa fa-bed"></i> 2</div>
@@ -152,17 +167,20 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/3.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a
+                                        href="best-rooms-detail.jsp?type=${room[2][0]}&price=${room[2][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">President double LUXE</a></div>
+                            <div class="best-room_t"><a
+                                    href="best-rooms-detail.jsp?type=${room[2][0]}&price=${room[2][1]}">${room[2][0]}</a>
+                            </div>
                             <div class="best-room_desc">Mr do raising article general norland my hastily. Its companions
                                 say uncommonly pianoforte favourable. Education affection consulted by mr attending he
                                 therefore.
                             </div>
                             <div class="best-room_price">
-                                <span>$149</span> / night
+                                <span>${room[2][1]}</span> / night
                             </div>
                             <div class="best-room_footer">
                                 <div class="footer_el __bed"><i class="fa fa-bed"></i> 2</div>
@@ -179,17 +197,20 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/2.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a
+                                        href="best-rooms-detail.jsp?type=${room[3][0]}&price=${room[3][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Special spa room</a></div>
+                            <div class="best-room_t"><a
+                                    href="best-rooms-detail.jsp?type=${room[3][0]}&price=${room[3][1]}">${room[3][0]}</a>
+                            </div>
                             <div class="best-room_desc">Mr do raising article general norland my hastily. Its companions
                                 say uncommonly pianoforte favourable. Education affection consulted by mr attending he
                                 therefore.
                             </div>
                             <div class="best-room_price">
-                                <span>$739</span> / night
+                                <span>${room[3][1]}</span> / night
                             </div>
                             <div class="best-room_footer">
                                 <div class="footer_el __bed"><i class="fa fa-bed"></i> 2</div>
@@ -333,12 +354,13 @@
                             </div>
                         </div>
                     </div>
-                    </ul>
                 </div>
             </div>
+        </div>
     </section>
-    <!-- /choose best rooms -->
-    <!-- footer -->
+</div>
+<!-- /choose best rooms -->
+<!-- footer -->
 <%--    <footer class="footer">
         <div class="footer-top">
             <div class="container">
@@ -434,7 +456,6 @@
             </div>
         </div>
     </footer>--%>
-</div>
 <!-- /footer -->
 <!-- Scripts -->
 <script type="text/javascript" src="js/jquery.min.js"></script>
