@@ -113,8 +113,8 @@
                  </div>-->
                 <div class="container-fluid marg50">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h2 class="h2">请填写些必要信息...</h2></div>
-                    <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
-                    <div class="col-lg-8 col-md-8 col-sm-11 col-xs-11">
+                    <div class="col-lg-3 col-md-2 col-sm-1 col-xs-1"></div>
+                    <div class="col-lg-6 col-md-8 col-sm-11 col-xs-11">
                         <form action="TestServlet" method="post" class="form-horizontal form-wizzard">
                             <div class="row">
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
@@ -127,8 +127,37 @@
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
                                     <div id="surname-group" class="form-group">
                                         <label>密码</label>
-                                        <input type="password" name="new_password" class="form-control"
+                                        <input type="password" name="new_password" id="pass" class="form-control"
                                                placeholder="请输入密码:">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
+                                    <div id="level" class="pw-strength">
+                                        <div class="pw-bar"></div>
+                                        <div class="pw-bar-on"></div>
+                                        <span class="pw-txt">
+                                                <span>弱</span>
+                                                <span>中</span>
+                                                <span>强</span>
+                                            </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
+                                    <div id="pass-group" class="form-group" style="margin-top: 22px">
+                                        <label>确认密码</label>
+                                        <input type="password" name="new_password" id="confipass" class="form-control"
+                                               placeholder="请再输入一次密码:"
+                                        onblur="validatePass(this,document.getElementById('confi_help'))">
+                                        <span id="confi_help" class="col-lg-4 form-check"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
+                                    <div id="id-group" class="form-group">
+                                        <label>身份证</label>
+                                        <input type="text" name="new_id" class="form-control"
+                                               placeholder="请输入您的身份证号:"
+                                               onblur="validateID(this,document.getElementById('id_help'))">
+                                        <span id="id_help" class="col-lg-4 form-check"></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
@@ -138,20 +167,9 @@
                                                placeholder="请输入您的真实姓名:">
                                     </div>
                                 </div>
-                                <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
-                                    <div id="id-group" class="form-group">
-                                        <label>身份证</label>
-                                        <input type="text" name="new_id" class="form-control"
-                                               placeholder="请输入您的身份证号:">
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="comment-group" class="form-group">
-                                <!-- <textarea rows="10" name="comment" class="form-control"
-                                           placeholder="Additional note type here ..."></textarea>-->
                             </div>
                             <div class="form-group text-center">
-                                <input type="submit" value="注册" class="btn btn-default">
+                                <input type="button" value="注册" class="btn btn-default" onclick="placeOrder(this.form)">
                             </div>
                         </form>
                     </div>
@@ -275,7 +293,6 @@
 <script type="text/javascript" src="js/jquery.shuffle.min.js"></script>
 <script type="text/javascript" src="js/owl.carousel.min.js"></script>
 <!---<script type="text/javascript" src="http://ditu.google.cn/maps/api/js"></script>--->
-<script type="text/javascript" src="js/map.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <!-- /Scripts -->
 </body>
