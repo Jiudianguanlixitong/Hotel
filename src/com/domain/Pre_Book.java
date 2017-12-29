@@ -1,5 +1,7 @@
 package com.domain;
 
+import java.util.Date;
+
 public class Pre_Book {
     private int id;
     private int room_id;

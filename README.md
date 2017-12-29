@@ -50,7 +50,7 @@
                    select * from Room_Info where (in_day is null and out_day is null) or (out_day<'2017-02-11' or in_day>'2017-02-14')
                                       order by kind asc;
     
-  - [ ] 预订
+  - [X ] 预订
     - 凭借身份证号在线预订空余房间，录入入住和离店日期，房价、房间类型，一旦预订将锁定直至入住日。—订房客户
     <代码实现>：
               @前端：将预订单所需信息传入后端给的dao方法中，后端将预订单信息存入预订单表中。
