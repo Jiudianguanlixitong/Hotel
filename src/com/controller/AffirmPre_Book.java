@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/AffirmPre_Book")
+@WebServlet(name = "AffirmPre_Book", urlPatterns = {"/AffirmPre_Book"})
 public class AffirmPre_Book extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");

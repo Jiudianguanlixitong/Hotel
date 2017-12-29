@@ -24,8 +24,8 @@ public class CustomerDao extends BaseDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
+        return false;
     }
 
     //用户验证登录
@@ -43,8 +43,8 @@ public class CustomerDao extends BaseDao {
             } else return false;
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
+        return false;
     }
 
     //用户登录后通过用户名得到身份证
@@ -61,8 +61,23 @@ public class CustomerDao extends BaseDao {
             return id;
         } catch (SQLException e) {
             e.printStackTrace();
-            return id;
         }
+        return id;
+    }
 
+    //用户登录会通过身份证得到用户名
+    public String queryUsername(int id) {
+        String username = "";
+        String sql = "select username from Customer where id=?";
+        try (Connection connection = dataSource.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            username = resultSet.getString("username");
+            return username;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return username;
     }
 }

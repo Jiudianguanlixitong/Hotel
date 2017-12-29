@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 
-@WebServlet("/QueryRoom_Info")
+@WebServlet(name = "QueryRoom_Info", urlPatterns = {"/QueryRoom_Info"})
 public class QueryRoom_Info extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");

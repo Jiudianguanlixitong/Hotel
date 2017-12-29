@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/CustomerRegister")
+@WebServlet(name = "CustomerRegister", urlPatterns = {"/CustomerRegister"})
 public class CustomerRegister extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //用户注册模块
@@ -27,7 +27,7 @@ public class CustomerRegister extends HttpServlet {
         customer.setGender(new_gender);
         CustomerDao customerDao1 = new CustomerDao();
         if (customerDao1.addCustomer(customer)) {
-            response.sendRedirect("login.html");
+            response.sendRedirect("login.jsp");
         }
     }
 

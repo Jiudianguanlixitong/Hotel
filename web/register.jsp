@@ -53,7 +53,7 @@
                                     <li><a href="index.jsp">主页</a></li>
                                     <li><a href="about-us.jsp">关于我们</a></li>
                                     <li><a href="best-rooms.jsp">房间介绍</a></li>
-                                    <li><a href="best-rooms-detail.jsp">房间预定</a></li>
+                                    <li><a href="book-rooms-detail.jsp">房间预定</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -115,7 +115,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h2 class="h2">请填写些必要信息...</h2></div>
                     <div class="col-lg-3 col-md-2 col-sm-1 col-xs-1"></div>
                     <div class="col-lg-6 col-md-8 col-sm-11 col-xs-11">
-                        <form action="TestServlet" method="post" class="form-horizontal form-wizzard">
+                        <form action="CustomerRegister" method="post" class="form-horizontal form-wizzard">
                             <div class="row">
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
                                     <div id="name-group" class="form-group">
@@ -167,7 +167,7 @@
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
                                     <div id="gender-group" class="form-group">
                                         <label>性别</label>
-                                        <select name="gender" class="form-control">
+                                        <select name="new_gender" class="form-control">
                                             <option value="男">男</option>
                                             <option value="女">女</option>
                                         </select>
