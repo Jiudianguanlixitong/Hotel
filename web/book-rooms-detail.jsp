@@ -52,7 +52,7 @@
                                     <li><a href="index.jsp">主页</a></li>
                                     <li><a href="about-us.jsp">关于我们</a></li>
                                     <li><a href="best-rooms.jsp">房间介绍</a></li>
-                                    <li><a href="best-rooms-detail.jsp">房间预定</a></li>
+                                    <li><a href="book-rooms-detail.jsp">房间预定</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                     <div class="row reservation-top">
                         <div class="module __reservation">
                             <div class="module-block">
-                                <form class="form-planner form-horizontal">
+                                <%--<form class="form-planner form-horizontal">
                                     <div class="col-md-3 col-xs-12">
                                         <div class="form-group">
                                             <label>入住时间</label>
@@ -129,13 +129,14 @@
                                             <a href="wizzard-step2.html" class="btn btn-default wizzard-search-btn">Search</a>
                                         </div>
                                     </div>
-                                </form>
+                                </form>--%>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 marg50"><h2 class="h2">${param.type}</h2></div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="col-lg-12 marg50"><h2 class="h2">${param.kind}</h2></div>
+                <div class="col-lg-3 col-md-3 col-sm-3"></div>
+                <%--<div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="owl-carousel owl_gallery">
                         <div class="item"><img class="img-responsive" src="images/gallery/3.jpg"></div>
                         <div class="item"><img class="img-responsive" src="images/gallery/2.jpg"></div>
@@ -146,47 +147,61 @@
                         <div class="item"><img class="img-responsive" src="images/gallery/7.jpg"></div>
                         <div class="item"><img class="img-responsive" src="images/gallery/8.jpg"></div>
                     </div>
-                </div>
+                </div>--%>
                 <div class="col-lg-6 col-md-6">
                     <div class="room-detail_overview">
-                        <table class="simple">
-                            <tr>
-                                <td><strong>Price:</strong></td>
-                                <td><span>${param.price}</span> / a night</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Room size:</strong></td>
-                                <td>150 sqm</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Bed:</strong></td>
-                                <td>2 King Beds</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Max people:</strong></td>
-                                <td>5 people</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Wi-Fi:</strong></td>
-                                <td>Avaible</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Room Service:</strong></td>
-                                <td>Avaible</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Breakfast:</strong></td>
-                                <td>Included</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Laundry:</strong></td>
-                                <td>Avaible</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Taxi to Airport:</strong></td>
-                                <td>Yes</td>
-                            </tr>
-                        </table>
+                        <form action="AffirmPre_Book" method="post">
+                            <input type="hidden" name="kind" value="${param.kind}">
+                            <input type="hidden" name="price" value="${param.price}">
+                            <table class="simple">
+                                <tr>
+                                    <td><strong>价格:</strong></td>
+                                    <td><span>${param.price}</span> / a night</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>入住日期</strong></td>
+                                    <td>${in_day}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>离店日期</strong></td>
+                                    <td>${out_day}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>身份证</strong></td>
+                                    <td>${identification}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wi-Fi:</strong></td>
+                                    <td>Avaible</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Room Service:</strong></td>
+                                    <td>Avaible</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Breakfast:</strong></td>
+                                    <td>Included</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Laundry:</strong></td>
+                                    <td>Avaible</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Taxi to Airport:</strong></td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>额外的需求:</td>
+                                    <td><textarea class="form-control" rows="2" name="addition"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg-3"></td>
+                                    <%--<td><input type="submit" class="btn btn-default" value="提交"></td>--%>
+                                </tr>
+                            </table>
+                            <div class="col-lg-4"></div>
+                            <input type="submit" class="btn btn-default" value="提交">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -203,11 +218,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/1.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a href="book-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Grand super LUX</a></div>
+                            <div class="best-room_t"><a href="book-rooms-detail.jsp">Grand super LUX</a></div>
                             <div class="best-room_desc">
                                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                                 blanditiis praesentium voluptatum deleniti atque corrupti quos
@@ -222,11 +237,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/2.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a href="book-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Special spa room</a></div>
+                            <div class="best-room_t"><a href="book-rooms-detail.jsp">Special spa room</a></div>
                             <div class="best-room_desc">
                                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                                 blanditiis praesentium voluptatum deleniti atque corrupti quos
@@ -241,11 +256,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/3.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a href="book-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">President double LUXE</a></div>
+                            <div class="best-room_t"><a href="book-rooms-detail.jsp">President double LUXE</a></div>
                             <div class="best-room_desc">
                                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                                 blanditiis praesentium voluptatum deleniti atque corrupti quos
@@ -260,11 +275,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/4.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a href="book-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Grand super LUX</a></div>
+                            <div class="best-room_t"><a href="book-rooms-detail.jsp">Grand super LUX</a></div>
                             <div class="best-room_desc">
                                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                                 blanditiis praesentium voluptatum deleniti atque corrupti quos
@@ -279,11 +294,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/5.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a href="book-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Special spa room</a></div>
+                            <div class="best-room_t"><a href="book-rooms-detail.jsp">Special spa room</a></div>
                             <div class="best-room_desc">
                                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                                 blanditiis praesentium voluptatum deleniti atque corrupti quos
@@ -298,11 +313,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/6.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a href="book-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">President double LUXE</a></div>
+                            <div class="best-room_t"><a href="book-rooms-detail.jsp">President double LUXE</a></div>
                             <div class="best-room_desc">
                                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                                 blanditiis praesentium voluptatum deleniti atque corrupti quos

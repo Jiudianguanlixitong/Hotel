@@ -52,7 +52,7 @@
                                     <li><a href="index.jsp">主页</a></li>
                                     <li><a href="about-us.jsp">关于我们</a></li>
                                     <li><a href="best-rooms.jsp">房间介绍</a></li>
-                                    <li><a href="best-rooms-detail.jsp">房间预定</a></li>
+                                    <li><a href="book-rooms-detail.jsp">房间预定</a></li>
                                 </ul>
                             </div>
                         </div>

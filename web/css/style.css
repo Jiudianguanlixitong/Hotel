@@ -1243,6 +1243,8 @@ section, .section {
 * Room detail styles
 **/
 .room-detail {
+    padding-top: 0px;
+    padding-bottom: 75px;
 }
 
 .room-detail .room-detail_price {

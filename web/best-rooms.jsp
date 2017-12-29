@@ -61,7 +61,7 @@
                                     <li><a href="index.jsp">主页</a></li>
                                     <li><a href="about-us.jsp">关于我们</a></li>
                                     <li><a href="best-rooms.jsp">房间介绍</a></li>
-                                    <li><a href="best-rooms-detail.jsp">房间预定</a></li>
+                                    <li><a href="book-rooms-detail.jsp">房间预定</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -107,12 +107,12 @@
                             <a href="#"><img src="images/best-rooms/1.jpg" alt=""></a>
                             <div class="best-room_overlay">
                                 <div class="overlay_icn"><a
-                                        href="best-rooms-detail.jsp?type=${room[0][0]}&price=${room[0][1]}"></a></div>
+                                        href="book-rooms-detail.jsp?kind=${room[0][0]}&price=${room[0][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
                             <div class="best-room_t"><a
-                                    href="best-rooms-detail.jsp?type=${room[0][0]}&price=${room[0][1]}">${room[0][0]}</a>
+                                    href="book-rooms-detail.jsp?kind=${room[0][0]}&price=${room[0][1]}">${room[0][0]}</a>
                             </div>
                             <div class="best-room_desc">Mr do raising article general norland my hastily. Its companions
                                 say uncommonly pianoforte favourable. Education affection consulted by mr attending he
@@ -138,12 +138,12 @@
                             <a href="#"><img src="images/best-rooms/4.jpg" alt=""></a>
                             <div class="best-room_overlay">
                                 <div class="overlay_icn"><a
-                                        href="best-rooms-detail.jsp?type=${room[1][0]}&price=${room[1][1]}"></a></div>
+                                        href="book-rooms-detail.jsp?kind=${room[1][0]}&price=${room[1][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
                             <div class="best-room_t"><a
-                                    href="best-rooms-detail.jsp?type=${room[1][0]}&price=${room[1][1]}">${room[1][0]}</a>
+                                    href="book-rooms-detail.jsp?kind=${room[1][0]}&price=${room[1][1]}">${room[1][0]}</a>
                             </div>
                             <div class="best-room_desc">Mr do raising article general norland my hastily. Its companions
                                 say uncommonly pianoforte favourable. Education affection consulted by mr attending he
@@ -168,12 +168,12 @@
                             <a href="#"><img src="images/best-rooms/3.jpg" alt=""></a>
                             <div class="best-room_overlay">
                                 <div class="overlay_icn"><a
-                                        href="best-rooms-detail.jsp?type=${room[2][0]}&price=${room[2][1]}"></a></div>
+                                        href="book-rooms-detail.jsp?kind=${room[2][0]}&price=${room[2][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
                             <div class="best-room_t"><a
-                                    href="best-rooms-detail.jsp?type=${room[2][0]}&price=${room[2][1]}">${room[2][0]}</a>
+                                    href="book-rooms-detail.jsp?kind=${room[2][0]}&price=${room[2][1]}">${room[2][0]}</a>
                             </div>
                             <div class="best-room_desc">Mr do raising article general norland my hastily. Its companions
                                 say uncommonly pianoforte favourable. Education affection consulted by mr attending he
@@ -198,12 +198,12 @@
                             <a href="#"><img src="images/best-rooms/2.jpg" alt=""></a>
                             <div class="best-room_overlay">
                                 <div class="overlay_icn"><a
-                                        href="best-rooms-detail.jsp?type=${room[3][0]}&price=${room[3][1]}"></a></div>
+                                        href="book-rooms-detail.jsp?kind=${room[3][0]}&price=${room[3][1]}"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
                             <div class="best-room_t"><a
-                                    href="best-rooms-detail.jsp?type=${room[3][0]}&price=${room[3][1]}">${room[3][0]}</a>
+                                    href="book-rooms-detail.jsp?kind=${room[3][0]}&price=${room[3][1]}">${room[3][0]}</a>
                             </div>
                             <div class="best-room_desc">Mr do raising article general norland my hastily. Its companions
                                 say uncommonly pianoforte favourable. Education affection consulted by mr attending he
@@ -228,11 +228,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/6.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a href="book-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">President double LUXE</a></div>
+                            <div class="best-room_t"><a href="book-rooms-detail.jsp">President double LUXE</a></div>
                             <div class="best-room_desc">Mr do raising article general norland my hastily. Its companions
                                 say uncommonly pianoforte favourable. Education affection consulted by mr attending he
                                 therefore.
@@ -255,11 +255,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/5.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a href="book-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Special spa room</a></div>
+                            <div class="best-room_t"><a href="book-rooms-detail.jsp">Special spa room</a></div>
                             <div class="best-room_desc">Mr do raising article general norland my hastily. Its companions
                                 say uncommonly pianoforte favourable. Education affection consulted by mr attending he
                                 therefore.
@@ -281,11 +281,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/1.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a href="book-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Grand super LUX</a></div>
+                            <div class="best-room_t"><a href="book-rooms-detail.jsp">Grand super LUX</a></div>
                             <div class="best-room_desc">Mr do raising article general norland my hastily. Its companions
                                 say uncommonly pianoforte favourable. Education affection consulted by mr attending he
                                 therefore.
@@ -307,11 +307,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/3.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a href="book-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">President double LUXE</a></div>
+                            <div class="best-room_t"><a href="book-rooms-detail.jsp">President double LUXE</a></div>
                             <div class="best-room_desc">Mr do raising article general norland my hastily. Its companions
                                 say uncommonly pianoforte favourable. Education affection consulted by mr attending he
                                 therefore.
@@ -333,11 +333,11 @@
                         <div class="best-room_img">
                             <a href="#"><img src="images/best-rooms/2.jpg" alt=""></a>
                             <div class="best-room_overlay">
-                                <div class="overlay_icn"><a href="best-rooms-detail.jsp"></a></div>
+                                <div class="overlay_icn"><a href="book-rooms-detail.jsp"></a></div>
                             </div>
                         </div>
                         <div class="best-room-info">
-                            <div class="best-room_t"><a href="best-rooms-detail.jsp">Special spa room</a></div>
+                            <div class="best-room_t"><a href="book-rooms-detail.jsp">Special spa room</a></div>
                             <div class="best-room_desc">Mr do raising article general norland my hastily. Its companions
                                 say uncommonly pianoforte favourable. Education affection consulted by mr attending he
                                 therefore.
