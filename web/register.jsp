@@ -131,23 +131,20 @@
                                                placeholder="请输入密码:">
                                     </div>
                                 </div>
-                                <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
-                                    <div id="level" class="pw-strength">
-                                        <div class="pw-bar"></div>
-                                        <div class="pw-bar-on"></div>
-                                        <span class="pw-txt">
+                                <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12" id="level" class="pw-strength">
+                                    <span class="pw-bar-on" style="margin-left: 31%"></span>
+<%--                                    <span class="pw-txt">
                                                 <span>弱</span>
                                                 <span>中</span>
                                                 <span>强</span>
-                                            </span>
-                                    </div>
+                                            </span>--%>
                                 </div>
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
-                                    <div id="pass-group" class="form-group" style="margin-top: 22px">
+                                    <div id="pass-group" class="form-group" style="margin-top: 32px">
                                         <label>确认密码</label>
                                         <input type="password" name="new_password" id="confipass" class="form-control"
                                                placeholder="请再输入一次密码:"
-                                        onblur="validatePass(this,document.getElementById('confi_help'))">
+                                               onblur="validatePass(this,document.getElementById('confi_help'))">
                                         <span id="confi_help" class="col-lg-4 form-check"></span>
                                     </div>
                                 </div>
@@ -165,6 +162,15 @@
                                         <label>真实姓名</label>
                                         <input type="text" name="new_name" class="form-control"
                                                placeholder="请输入您的真实姓名:">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
+                                    <div id="gender-group" class="form-group">
+                                        <label>性别</label>
+                                        <select name="gender" class="form-control">
+                                            <option value="男">男</option>
+                                            <option value="女">女</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
