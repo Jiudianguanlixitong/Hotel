@@ -287,7 +287,7 @@ function validatePass(inputFiedl, helpText) {
     var pass = document.getElementById("pass").value;
     var repassword = document.getElementById("confipass").value;
     if (pass != repassword) {
-        helpText.innerHTML ="两次密码不一致";
+        helpText.innerHTML = "两次密码不一致";
         return false;
     }
     return true;
@@ -296,7 +296,7 @@ function validatePass(inputFiedl, helpText) {
 
 function placeOrder(form) {
     if (validateID(form["new_id"], form["id_help"])
-    && validatePass(form["confipass"],form["confi_help"])) {
+        && validatePass(form["confipass"], form["confi_help"])) {
         form.submit();
     }
     else {

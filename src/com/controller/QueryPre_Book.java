@@ -14,7 +14,10 @@ public class QueryPre_Book extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int room_id = Integer.parseInt(request.getParameter("id"));
-        System.out.println("room_id=" + room_id);
+        //int room_id=Integer.parseInt(request.getParameter("id"));
+        String kind = request.getParameter("kind");
+        String price = request.getParameter("price");
+
+
     }
 }

@@ -38,6 +38,4 @@ public class Staff {
     public void setPosition(String position) {
         this.position = position;
     }
-
-
 }
