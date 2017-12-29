@@ -10,15 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/TestServlet")
-public class TestServlet extends HttpServlet {
+@WebServlet("/CustomerRegister")
+public class CustomerRegister extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //用户注册模块
+        request.setCharacterEncoding("UTF-8");
         String new_username=request.getParameter("new_username");
         String new_password=request.getParameter("new_password");
         String new_id=request.getParameter("new_id");
         String new_name=request.getParameter("new_name");
-        String new_gender=request.getParameter("newgender");
+        String new_gender=request.getParameter("new_gender");
         com.domain.Customer customer=new com.domain.Customer();
         customer.setUsername(new_username);
         customer.setPass(new_password);

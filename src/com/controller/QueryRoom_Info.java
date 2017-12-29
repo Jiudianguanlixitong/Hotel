@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.Format;
@@ -21,8 +22,11 @@ public class QueryRoom_Info extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         Room_infoDao room_infoDao=new Room_infoDao();
         ArrayList<Room_Info> room_infos=new ArrayList<Room_Info>();
+        HttpSession httpSession=request.getSession();
         String in_day=request.getParameter("in_day");
         String out_day=request.getParameter("out_day");
+        httpSession.setAttribute("in_day",in_day);
+        httpSession.setAttribute("out_day",out_day);
         String kind=request.getParameter("kind");
         java.text.SimpleDateFormat format = new java.text.SimpleDateFormat("yyyy-MM-dd");
         try {
