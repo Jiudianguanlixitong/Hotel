@@ -1,20 +1,18 @@
 package com.domain;
 
-import java.util.Date;
-
 public class Room_Info {
     private int room_id;
     private int floors;
     private String face;
     private String feature;
     private String kind;
-    private Date in_day;
-    private Date out_day;
+    private String in_day;
+    private String out_day;
     private String tidy;
     private String book_status;
     private int price;
 
-    public Room_Info(int room_id, int floors, String face, String feature, String kind, Date in_day, Date out_day, String tidy, String book_status) {
+    public Room_Info(int room_id, int floors, String face, String feature, String kind, String in_day, String out_day, String tidy, String book_status, int price) {
         this.room_id = room_id;
         this.floors = floors;
         this.face = face;
@@ -24,6 +22,7 @@ public class Room_Info {
         this.out_day = out_day;
         this.tidy = tidy;
         this.book_status = book_status;
+        this.price = price;
     }
 
     public Room_Info(int room_id, int floors, String face, String feature, String kind, int price) {
@@ -89,19 +88,19 @@ public class Room_Info {
         this.kind = kind;
     }
 
-    public Date getIn_day() {
+    public String getIn_day() {
         return in_day;
     }
 
-    public void setIn_day(Date in_day) {
+    public void setIn_day(String in_day) {
         this.in_day = in_day;
     }
 
-    public Date getOut_day() {
+    public String getOut_day() {
         return out_day;
     }
 
-    public void setOut_day(Date out_day) {
+    public void setOut_day(String out_day) {
         this.out_day = out_day;
     }
 

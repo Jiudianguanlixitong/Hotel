@@ -133,11 +133,11 @@
                                 </div>
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12" id="level" class="pw-strength">
                                     <span class="pw-bar-on form-group"></span>
-<%--                                    <span class="pw-txt">
-                                                <span>弱</span>
-                                                <span>中</span>
-                                                <span>强</span>
-                                            </span>--%>
+                                    <%--                                    <span class="pw-txt">
+                                                                                    <span>弱</span>
+                                                                                    <span>中</span>
+                                                                                    <span>强</span>
+                                                                                </span>--%>
                                 </div>
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
                                     <div id="pass-group" class="form-group" style="margin-top: 32px">
