@@ -7,17 +7,17 @@
 ## 功能要求（TODO)：
 
 ### 1. 基础设置
-  - [ ] 客房类型设置
+  - [X] 客房类型设置
     - 设置客房分类信息：客房类型、房价、空余房间数—经理
     <代码实现>：
              @前端:将输入的值传入dao中的方法
              @sql:insert into Room_Type values(?,?,?);
-  - [ ] 客房信息设置
+  - [X] 客房信息设置
     - 房间号，房间类型、楼层、朝向、房间特征描述、房间状态是否空置等—经理
     <代码实现>：
              @前端:将输入的值传入dao中的方法
              @sql:insert into Room_Info values(?,?,?,?,?);
-  - [ ] 账号设置
+  - [X] 账号设置
     - 添加删除修改各类角色账号—经理
     <代码实现>：
              @前端:
@@ -30,7 +30,7 @@
                   修改：update Customer set pass=?,position=? where username=?
                       
 ### 2. 在线预订
-  - [ ] 注册与登录功能
+  - [X] 注册与登录功能
     - 录入身份证等个人基本信息—订房客户
     <代码实现>：
               @前端：
@@ -39,16 +39,16 @@
               @sql：
                    注册：insert into Customer values(?,?,?,?,?)   
                    登录：select pass from Customer  where username=?
-  - [ ] 在线浏览房间信息
+  - [X] 在线浏览房间信息
     - 可以查询酒店房间信息，按时间搜索有效空余房间—订房客户
     <代码实现>：
               @前端：
                    查询所有房间信息
                    按时间查询空余房间信息：给后端一个in_day和out_day,后端返回一个空余房间信息数组
               @sql：     
-                   select * from Room_Info;
-                   select * from Room_Info where in_day=out_day=null or ?>out_day or ?<in_day 
-                   order by kind asc;
+                   select room_id,floors,face,feature,kind from Room_Info;
+                   select * from Room_Info where (in_day is null and out_day is null) or (out_day<'2017-02-11' or in_day>'2017-02-14')
+                                      order by kind asc;
     
   - [ ] 预订
     - 凭借身份证号在线预订空余房间，录入入住和离店日期，房价、房间类型，一旦预订将锁定直至入住日。—订房客户
@@ -61,8 +61,8 @@
     <代码实现>：
               @前端：输入身份证号给后端的dao方法返回一个可用房间的数组，点击确认传给后端账单信息保存至账单表
                      并改动房间信息状态。
-              @sql：select * from Room_Info where in_day=out_day=null or ?>out_day or ?<in_day 
-                    and kind=? order by room_id asc;
+              @sql： select * from Room_Info where (in_day is null and out_day is null) or (out_day<'2017-02-11' or in_day>'2017-02-14')
+                                      order by kind asc;
                     insert into Bill values(?,?,?,?,?,?,?);
                     update Room_Info set in_day=?,out_day=? where room_id=?;
                     
@@ -78,18 +78,18 @@
   - [ ] 可用房查询
     - 根据日期、房型查阅可用房间--前台接待员
     <代码实现>：
-             @sql：select * from Room_Info where in_day=out_day=null or ?>out_day or ?<in_day 
-                   order by kind asc;
-                   select * from Room_Info where in_day=out_day=null or ?>out_day or ?<in_day 
+             @sql：  select * from Room_Info where (in_day is null and out_day is null) or (out_day<'2017-02-11' or in_day>'2017-02-14')
+                                     order by kind asc;
+                    select * from Room_Info where (in_day is null and out_day is null) or (out_day<'2017-02-11' or in_day>'2017-02-14') 
                    and kind=? order by room_id asc;
   - [ ] 房态统计
     - 用表格或图形显示整个酒店房间状态，可以分客房类型、楼层朝向等进行分类查询统计。—经理
     <代码实现>：
-             @sql：select * from Room_Info where in_day=out_day=null or ?>out_day or ?<in_day 
+             @sql：  select * from Room_Info where (in_day is null and out_day is null) or (out_day<'2017-02-11' or in_day>'2017-02-14')
                    and floors =? order by kind asc;
-                   select * from Room_Info where in_day=out_day=null or ?>out_day or ?<in_day 
+                     select * from Room_Info where (in_day is null and out_day is null) or (out_day<'2017-02-11' or in_day>'2017-02-14') 
                    and face =? order by kind asc;
-                   select * from Room_Info where in_day=out_day=null or ?>out_day or ?<in_day 
+                    select * from Room_Info where (in_day is null and out_day is null) or (out_day<'2017-02-11' or in_day>'2017-02-14')
                    and kind=? order by room_id asc;
 ### 5. 访客浏览
   - [ ] 浏览

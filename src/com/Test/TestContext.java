@@ -11,8 +11,13 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@WebServlet("/TestConnect")
+@WebServlet(name = "TestContext", urlPatterns = {"/TestConnect"})
 public class TestContext extends HttpServlet {
+
+
+    public TestContext() {
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }

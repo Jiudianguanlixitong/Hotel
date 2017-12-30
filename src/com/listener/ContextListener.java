@@ -1,7 +1,5 @@
 package com.listener;
 
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -16,10 +14,9 @@ import java.util.Date;
 @WebListener
 public class ContextListener implements ServletContextListener,
         ServletContextAttributeListener {
-    public ServletContext context = null;
+    private ServletContext context = null;
 
     public void contextInitialized(ServletContextEvent sce) {
-        System.out.println("Now is On");
         Context ctx;
         DataSource dataSource = null;
         context = sce.getServletContext();
