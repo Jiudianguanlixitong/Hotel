@@ -5,9 +5,9 @@
             type="javax.sql.DataSource"
             maxActive="4"
             maxIdle="2"
-            username="Temp"
+            username="sa"
             maxwait="5000"
             driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-            password="123456"
+            password="123456789"
             url="jdbc:sqlserver://localhost:1433;DatabaseName=Hotel"/>
 </Context>
