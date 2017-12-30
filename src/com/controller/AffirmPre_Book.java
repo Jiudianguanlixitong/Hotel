@@ -20,7 +20,7 @@ public class AffirmPre_Book extends HttpServlet {
         String in_day = (String) httpSession.getAttribute("in_day");
         String out_day = (String) httpSession.getAttribute("out_day");
         String kind = request.getParameter("kind");
-        int price = Integer.parseInt(request.getParameter("price"));
+        int price = Integer.parseInt(request.getParameter("price").substring(1));
         String addition = request.getParameter("addition");
         System.out.println("id=" + id + "in_day=" + in_day + "out_day=" + out_day + "kind=" + kind + "price=" + price + "re=" + addition);
         Pre_Book pre_book = new Pre_Book(id, in_day, out_day, kind, addition, price);

@@ -26,10 +26,9 @@ public class Pre_bookDao extends BaseDao {
             preparedStatement.setString(6, String.valueOf(pre_book.getPrice()));
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) return true;
-            else return false;
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
+        return false;
     }
 }
