@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE HTML>
 <html lang="zh-cmn-Hans">
 <head>
@@ -16,29 +17,29 @@
                     <a href=""></a>
                 </div>
                 <ul>
-                    <li><a href="#dashboard" id="targeted">房间状态</a></li>
-                    <li><a href="#posts">房间详情</a></li>
-                    <li><a href="#media">预定管理</a></li>
-                    <li><a href="#pages">pages</a></li>
-                    <li><a href="#links">links</a></li>
-                    <li><a href="#comments">comments</a></li>
-                    <li><a href="#widgets">widgets</a></li>
-                    <li><a href="#users">users</a></li>
-                    <li><a href="#tools">tools</a></li>
-                    <li><a href="#settings">settings</a></li>
+                    <li><a href="#RoomStatus" id="targeted">房间状态</a></li>
+                    <li><a href="#RoomDetail">房间详情</a></li>
+                    <li><a href="#BookSetting">预定管理</a></li>
+                    <li><a href="#UserSetting">用户管理</a></li>
+                    <!--                    <li><a href="#links">links</a></li>
+                                        <li><a href="#comments">comments</a></li>
+                                        <li><a href="#widgets">widgets</a></li>
+                                        <li><a href="#users">users</a></li>
+                                        <li><a href="#tools">tools</a></li>-->
+                    <li><a href="#settings">账号设置</a></li>
                 </ul>
             </div>
             <div class="main">
                 <ul class="topbar clearfix">
-                    <li><a href="#">房间状态</a></li>
-                    <li><a href="#">p</a></li>
-                    <li><a href="#">o</a></li>
-                    <li><a href="#">f</a></li>
-                    <li><a href="#">n</a></li>
+                    <li><a href="#">用户信息</a></li>
+                    <!--                    <li><a href="#">p</a></li>
+                                        <li><a href="#">o</a></li>
+                                        <li><a href="#">f</a></li>
+                                        <li><a href="#">n</a></li>-->
                 </ul>
                 <div class="mainContent clearfix">
-                    <div id="dashboard">
-                        <h2 class="header"><span class="icon"></span>Dashboard</h2>
+                    <div id="RoomStatus">
+                        <h2 class="header"><span class="icon"></span>房间状态</h2>
                         <div class="monitor">
                             <h4>Right Now</h4>
                             <div class="clearfix">
@@ -71,16 +72,16 @@
                             </form>
                         </div>
                     </div>
-                    <div id="posts">
-                        <h2 class="header">posts</h2>
+                    <div id="RoomDetail">
+                        <h2 class="header">房间详情</h2>
                     </div>
-                    <div id="media">
-                        <h2 class="header">media</h2>
+                    <div id="BookSetting">
+                        <h2 class="header">预定管理</h2>
                     </div>
-                    <div id="pages">
-                        <h2 class="header">pages</h2>
+                    <div id="UserSetting">
+                        <h2 class="header">用户管理</h2>
                     </div>
-                    <div id="links">
+                    <!--<div id="links">
                         <h2 class="header">links</h2>
                     </div>
                     <div id="comments">
@@ -94,9 +95,9 @@
                     </div>
                     <div id="tools">
                         <h2 class="header">tools</h2>
-                    </div>
+                    </div>-->
                     <div id="settings">
-                        <h2 class="header">settings</h2>
+                        <h2 class="header">账户设置</h2>
                     </div>
                 </div>
                 <ul class="statusbar">
@@ -108,10 +109,10 @@
             </div>
         </div>
         <script type="text/javascript">
-            (function () {
+            /*(function () {
                 var initTarget = document.getElementById("targeted");
                 initTarget.click();
-            })();
+            })();*/
         </script>
     </section>
 </div>

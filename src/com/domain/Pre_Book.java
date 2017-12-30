@@ -1,7 +1,5 @@
 package com.domain;
 
-import java.util.Date;
-
 public class Pre_Book {
     private int id;
     private String in_day;

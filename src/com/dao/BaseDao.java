@@ -3,22 +3,22 @@ package com.dao;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServlet;
 import javax.sql.DataSource;
 import java.sql.Connection;
 
-public class BaseDao{
+public class BaseDao {
     DataSource dataSource;
-    public BaseDao(){
+
+    public BaseDao() {
         try {
-            Context context=new InitialContext();
-            dataSource=(DataSource)context.lookup("java:comp/env/jdbc/sampleDS");
+            Context context = new InitialContext();
+            dataSource = (DataSource) context.lookup("java:comp/env/jdbc/SQLServer");
         } catch (NamingException e) {
             e.printStackTrace();
         }
     }
-    public Connection getConnection()throws Exception{
+
+    public Connection getConnection() throws Exception {
         return dataSource.getConnection();
     }
 }

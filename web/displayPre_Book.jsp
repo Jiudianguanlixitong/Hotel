@@ -12,21 +12,41 @@
 </head>
 <body>
 <%
-    String kind=request.getParameter("kind");
-    String price=request.getParameter("price");
+    String kind = request.getParameter("kind");
+    String price = request.getParameter("price");
 %>
 <form action="AffirmPre_Book" method="post">
     <input type="hidden" name="kind" value="<%=kind%>">
     <input type="hidden" name="price" value="<%=price%>">
     <input type="hidden" name="kind" value="<%=kind%>">
-<table align="center" border="0">
-    <tr><td>身份证</td><td>${identification}</td></tr>
-    <tr><td>入住日期</td><td>${in_day}</td></tr>
-    <tr><td>离开日期</td><td>${out_day}</td></tr>
-    <tr><td>房间种类</td><td><%=kind%></td></tr>
-    <tr><td>价格</td><td><%=price%></td></tr>
-    <tr><td>说明</td><td><input type="text" size="40" name="addition"></td></tr>
-</table>
+    <table align="center" border="0">
+        <tr>
+            <td>身份证</td>
+            <td>${identification}</td>
+        </tr>
+        <tr>
+            <td>入住日期</td>
+            <td>${in_day}</td>
+        </tr>
+        <tr>
+            <td>离开日期</td>
+            <td>${out_day}</td>
+        </tr>
+        <tr>
+            <td>房间种类</td>
+            <td><%=kind%>
+            </td>
+        </tr>
+        <tr>
+            <td>价格</td>
+            <td><%=price%>
+            </td>
+        </tr>
+        <tr>
+            <td>说明</td>
+            <td><input type="text" size="40" name="addition"></td>
+        </tr>
+    </table>
     <div align="center"><input type="submit" value="确认订单"></div>
 </form>
 </body>

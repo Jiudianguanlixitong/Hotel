@@ -1,7 +1,5 @@
 package com.domain;
 
-import java.util.Date;
-
 public class Room_Info {
     private int room_id;
     private int floors;
