@@ -27,8 +27,13 @@
                     </div>
                     <div class="col-lg-3 col-md-8 col-sm-8 col-xs-12 pull-right">
                         <div class="header-social pull-right">
+                            <% if (session.getAttribute("username") == null) {%>
                             <a href="register.jsp">注册</a>
-                            <a href="login.jsp">登陆</a>
+                            <a href="login.jsp?curUrl=${pageContext.request.requestURI}">登陆</a>
+                            <% } else {%>
+                            欢迎 ${sessionScope.username}
+                            <a href="logout?curUrl=${pageContext.request.requestURI}">注销</a>
+                            <%}%>
                         </div>
                     </div>
                 </div>
