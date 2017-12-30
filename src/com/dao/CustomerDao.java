@@ -65,6 +65,24 @@ public class CustomerDao extends BaseDao {
         return id;
     }
 
+    //查询用户名是否唯一
+    public boolean queryisRegisted(String username) {
+        boolean isIn = false;
+        String sql = "select username from Customer where username=?";
+        try (Connection connection = dataSource.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, username);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                isIn = true;
+                return isIn;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return isIn;
+    }
+
     //用户登录会通过身份证得到用户名
     public String queryUsername(int id) {
         String username = "";
