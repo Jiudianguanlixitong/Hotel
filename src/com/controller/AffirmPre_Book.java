@@ -26,7 +26,6 @@ public class AffirmPre_Book extends HttpServlet {
         System.out.println("id=" + id +"room_id"+room_id+"in_day=" + in_day + "out_day=" + out_day + "kind=" + kind + "price=" + price + "re=" + addition);
         Pre_Book pre_book = new Pre_Book(id,room_id,in_day, out_day, kind, addition, price);
         Pre_bookDao pre_bookDao = new Pre_bookDao();
-
         if (pre_bookDao.addPre_Book(pre_book)) {
             System.out.println("success!");
             //请求转发至成功页面
