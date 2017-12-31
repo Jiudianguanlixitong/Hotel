@@ -38,7 +38,7 @@
         </td>
         <td><%=room_infos.get(i).getPrice()%>
         </td>
-        <td><a href="displayPre_Book.jsp?kind=<%=room_infos.get(i).getKind()%>&price=<%=room_infos.get(i).getPrice()%>">预订</a>
+        <td><a href="displayPre_Book.jsp?roomId=<%=room_infos.get(i).getRoom_id()%>&kind=<%=room_infos.get(i).getKind()%>&price=<%=room_infos.get(i).getPrice()%>">预订</a>
         </td>
     </tr>
     <%

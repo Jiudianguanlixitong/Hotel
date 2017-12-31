@@ -36,7 +36,6 @@ public class CustomerDao extends BaseDao {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, username);
             ResultSet resultSet = preparedStatement.executeQuery();
-            //System.out.println(resultSet.getString("pass"));
             if (resultSet.next()) {
                 if (resultSet.getString("pass").equals(password)) return true;
                 else return false;
@@ -79,23 +78,5 @@ public class CustomerDao extends BaseDao {
             e.printStackTrace();
         }
         return username;
-    }
-    //用户登录后通过用户名得到身份证
-    public int queryIndentification(String username){
-        int id=0;
-        String sql="select id from Customer where username=?";
-        try (Connection connection = dataSource.getConnection()) {
-            PreparedStatement preparedStatement=connection.prepareStatement(sql);
-            preparedStatement.setString(1,username);
-            ResultSet resultSet=preparedStatement.executeQuery();
-            while (resultSet.next()){
-               id=resultSet.getInt("id");
-            }
-            return id;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return id;
-        }
-
     }
 }

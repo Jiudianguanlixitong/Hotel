@@ -29,7 +29,17 @@ public class Room_infoDao extends BaseDao {
     }
 
     public ArrayList<Room_Info> queryAllRoom_Info(String in_day, String out_day, String kind) {
-        String sql = "  select distinct(room_id),floors,face,feature,Room_Info.kind,price from Room_Info,Room_Type where (out_day<? or in_day>?)and Room_Info.kind=Room_Type.kind and Room_Info.kind=?";
+        String sql = "select room_id,floors,face,feature,Room_Info.kind,price from Room_Info,Room_Type\n" +
+                "where room_id in\n" +
+                "(\n" +
+                "select room_id  from Room_Info except \n" +
+                "(\n" +
+                "select room_id from Pre_Book except \n" +
+                "(\n" +
+                "select room_id from Pre_Book where out_day<?or in_day>?\n" +
+                ")\n" +
+                ")\n" +
+                ")and Room_Info.kind=Room_Type.kind and Room_Info.kind=?";
         ArrayList<Room_Info> room_infos = new ArrayList<Room_Info>();
         Connection connection = null;
         try {
@@ -62,7 +72,17 @@ public class Room_infoDao extends BaseDao {
 
     public ArrayList<Room_Info> queryRoom_Info_time(String in_day, String out_day) {
         ArrayList<Room_Info> room_infos = new ArrayList<Room_Info>();
-        String sql = "   select distinct(room_id),floors,face,feature,Room_Info.kind,price from Room_Info,Room_Type where (out_day<? or in_day>?)and Room_Info.kind=Room_Type.kind";
+        String sql = "select room_id,floors,face,feature,Room_Info.kind,price from Room_Info,Room_Type\n" +
+                "where room_id in\n" +
+                "(\n" +
+                "select room_id  from Room_Info except \n" +
+                "(\n" +
+                "select room_id from Pre_Book except \n" +
+                "(\n" +
+                "select room_id from Pre_Book where out_day<? or in_day>?\n" +
+                ")\n" +
+                ")\n" +
+                ")and Room_Info.kind=Room_Type.kind";
         Connection connection = null;
         try {
             connection = dataSource.getConnection();
@@ -89,5 +109,22 @@ public class Room_infoDao extends BaseDao {
             e.printStackTrace();
             return null;
         }
+    }
+//确认订单后改变房间信息
+    public boolean affirmPre_Book(String room_id,String in_day,String out_day,String book_status){
+        String sql="update Room_Info set in_day=?,out_day=?,book_status=? where room_id=? and in_day='1753-01-01'";
+        try (Connection connection = dataSource.getConnection()) {
+            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setString(1,in_day);
+            preparedStatement.setString(2,out_day);
+            preparedStatement.setString(3,book_status);
+            preparedStatement.setString(4,room_id);
+            preparedStatement.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+
     }
 }
