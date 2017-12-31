@@ -75,7 +75,7 @@
                     update Room_Info set in_day=null,out_day=null,where room_id=?;
                     
 ### 4. 客房管理
-  - [ ] 可用房查询
+  - [X ] 可用房查询
     - 根据日期、房型查阅可用房间--前台接待员
     <代码实现>：
              @sql：  select * from Room_Info where (in_day is null and out_day is null) or (out_day<'2017-02-11' or in_day>'2017-02-14')
