@@ -19,7 +19,7 @@
 <form action="AffirmPre_Book" method="post">
     <input type="hidden" name="kind" value="<%=kind%>">
     <input type="hidden" name="price" value="<%=price%>">
-    <input type="hidden" name="kind" value="<%=kind%>">
+    <input type="hidden" name="room_id" value="<%=room_id%>">
     <table align="center" border="0">
         <tr>
             <td>身份证</td>
