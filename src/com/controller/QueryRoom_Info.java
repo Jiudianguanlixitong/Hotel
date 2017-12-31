@@ -38,7 +38,8 @@ public class QueryRoom_Info extends HttpServlet {
             if ("all".equals(kind)) {
                 room_infos = room_infoDao.queryRoom_Info_time(in_day, out_day);
             } else {
-                room_infos = room_infoDao.queryAllRoom_Info(in_day, out_day, kind);
+                System.out.println("kind=" + kind);
+                room_infos = room_infoDao.queryAllRoom_Info(in_day,out_day,kind);
             }
         } catch (ParseException e) {
             e.printStackTrace();
