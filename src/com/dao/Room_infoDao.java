@@ -36,7 +36,7 @@ public class Room_infoDao extends BaseDao {
                 "(\n" +
                 "select room_id from Pre_Book except \n" +
                 "(\n" +
-                "select room_id from Pre_Book where out_day<?or in_day>?\n" +
+                "select room_id from Pre_Book where out_day<=? or in_day>=?\n" +
                 ")\n" +
                 ")\n" +
                 ")and Room_Info.kind=Room_Type.kind and Room_Info.kind=?";
@@ -79,7 +79,7 @@ public class Room_infoDao extends BaseDao {
                 "(\n" +
                 "select room_id from Pre_Book except \n" +
                 "(\n" +
-                "select room_id from Pre_Book where out_day<? or in_day>?\n" +
+                "select room_id from Pre_Book where out_day<=? or in_day>=?\n" +
                 ")\n" +
                 ")\n" +
                 ")and Room_Info.kind=Room_Type.kind";
