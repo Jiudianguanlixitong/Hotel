@@ -2,14 +2,16 @@ package com.domain;
 
 public class Pre_Book {
     private int id;
+    private int room_id;
     private String in_day;
     private String out_day;
     private String kind;
     private String request;
     private int price;
 
-    public Pre_Book(int id, String in_day, String out_day, String kind, String request, int price) {
+    public Pre_Book(int id, int room_id, String in_day, String out_day, String kind, String request, int price) {
         this.id = id;
+        this.room_id = room_id;
         this.in_day = in_day;
         this.out_day = out_day;
         this.kind = kind;
@@ -35,6 +37,14 @@ public class Pre_Book {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getRoom_id() {
+        return room_id;
+    }
+
+    public void setRoom_id(int room_id) {
+        this.room_id = room_id;
     }
 
     public String getIn_day() {

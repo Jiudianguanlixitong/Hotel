@@ -158,7 +158,12 @@
                         <form action="AffirmPre_Book" method="post">
                             <input type="hidden" name="kind" value="${param.kind}">
                             <input type="hidden" name="price" value="${param.price}">
+                            <input type="hidden" name="room_id" value="${param.room_id}">
                             <table class="simple">
+                                <tr>
+                                    <td><strong>房间号:</strong></td>
+                                    <td>${param.room_id}</td>
+                                </tr>
                                 <tr>
                                     <td><strong>价格:</strong></td>
                                     <td><span>${param.price}</span> / a night</td>
