@@ -36,6 +36,7 @@ public class CustomerDao extends BaseDao {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, username);
             ResultSet resultSet = preparedStatement.executeQuery();
+            //System.out.println(resultSet.getString("pass"));
             if (resultSet.next()) {
                 if (resultSet.getString("pass").equals(password)) return true;
                 else return false;
@@ -62,6 +63,24 @@ public class CustomerDao extends BaseDao {
             e.printStackTrace();
         }
         return id;
+    }
+
+    //查询用户名是否唯一
+    public boolean queryisRegisted(String username) {
+        boolean isIn = false;
+        String sql = "select username from Customer where username=?";
+        try (Connection connection = dataSource.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, username);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                isIn = true;
+                return isIn;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return isIn;
     }
 
     //用户登录会通过身份证得到用户名

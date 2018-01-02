@@ -1,4 +1,4 @@
-﻿<%@ page contentType="text/html; charset=UTF-8" %>
+﻿﻿<%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <head>
@@ -26,7 +26,7 @@
                     <%--<div class="col-lg-3 col-md-8 col-sm-8 col-xs-12 pull-right">
                         <div class="header-social pull-right">
                             <a href="register.jsp">注册</a>
-                            <a href="login.jsp">登陆</a>
+                            <%--<a href="login.jsp">登陆</a>--%>
                         </div>
                     </div>--%>
                 </div>

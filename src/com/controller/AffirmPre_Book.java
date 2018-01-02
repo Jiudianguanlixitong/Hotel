@@ -30,6 +30,7 @@ public class AffirmPre_Book extends HttpServlet {
             System.out.println("success!");
             //请求转发至成功页面
         } else System.out.println("false!");
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -36,7 +36,7 @@ public class QueryRoom_Info extends HttpServlet {
             System.out.println("kind=" + kind);
             System.out.println("相隔的天数=" + day);
             if ("all".equals(kind)) {
-                room_infos = room_infoDao.queryRoom_Info_time(in_day,out_day);
+                room_infos = room_infoDao.queryRoom_Info_time(in_day, out_day);
             } else {
                 System.out.println("kind=" + kind);
                 room_infos = room_infoDao.queryAllRoom_Info(in_day,out_day,kind);
@@ -44,7 +44,7 @@ public class QueryRoom_Info extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        request.setAttribute("room_infos",room_infos);
+        request.setAttribute("room_infos", room_infos);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/roomBook.jsp");
         requestDispatcher.forward(request, response);
     }

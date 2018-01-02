@@ -1,4 +1,3 @@
-
 package com.controller;
 
 import com.dao.CustomerDao;
@@ -32,4 +31,3 @@ public class CustomerLogin extends HttpServlet {
 
     }
 }
-
