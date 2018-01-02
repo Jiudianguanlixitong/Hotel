@@ -23,12 +23,12 @@
                         </div>
                         <div class="header-phone"><i class="fa fa-phone"></i> <a href="#">12345678</a></div>
                     </div>
-                    <%-- <div class="col-lg-3 col-md-8 col-sm-8 col-xs-12 pull-right">
+                     <div class="col-lg-3 col-md-8 col-sm-8 col-xs-12 pull-right">
                          <div class="header-social pull-right">
-                             <a href="register.jsp">注册</a>
+                             <%--<a href="register.jsp">注册</a>--%>
                              <a href="login.jsp">登陆</a>
                          </div>
-                     </div>--%>
+                     </div>
                 </div>
             </div>
         </div>
@@ -120,8 +120,10 @@
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
                                     <div id="name-group" class="form-group">
                                         <label>用户名</label>
-                                        <input type="text" name="new_username" class="form-control"
-                                               placeholder="请输入您的用户名:">
+                                        <input type="text" id="username" name="new_username" class="form-control"
+                                               placeholder="请输入您的用户名:"
+                                               oninput="validateUsername()">
+                                        <span id="user_help" class="col-lg-6 form-check"></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
@@ -175,7 +177,7 @@
                                 </div>
                             </div>
                             <div class="form-group text-center">
-                                <input type="button" value="注册" class="btn btn-default" onclick="placeOrder(this.form)">
+                                <input type="button" value="注册" class="btn btn-default" data-toggle="modal" data-target="#success" onclick="placeOrder(this.form)">
                             </div>
                         </form>
                     </div>
@@ -298,8 +300,8 @@
 <script type="text/javascript" src="js/jquery.parallax.min.js"></script>
 <script type="text/javascript" src="js/jquery.shuffle.min.js"></script>
 <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-<!---<script type="text/javascript" src="http://ditu.google.cn/maps/api/js"></script>--->
 <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/validate.js"></script>
 <!-- /Scripts -->
 </body>
 </html>
