@@ -7,13 +7,13 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Room_typeDao extends BaseDao {
-    public boolean setRoom_Type(Room_Type room_type) {
+    public boolean setRoom_Type(String kind,String price,String free) {
         String sql = "insert into Room_Type values(?,?,?)";
         try (Connection connection = dataSource.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, room_type.getKind());
-            preparedStatement.setString(2, String.valueOf(room_type.getPrice()));
-            preparedStatement.setString(3, String.valueOf(room_type.getFree()));
+            preparedStatement.setString(1, kind);
+            preparedStatement.setString(2, price);
+            preparedStatement.setString(3, free);
             preparedStatement.executeUpdate();
             return true;
         } catch (SQLException e) {

@@ -68,5 +68,26 @@ public class StaffDao extends BaseDao {
             return false;
         }
     }
+    public Staff staffLogin(String username,String password){
+        String sql="select * from Staff where username=?";
+        Staff staff=new Staff();
+        try {
+            Connection connection=dataSource.getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setString(1,username);
+            ResultSet resultSet=preparedStatement.executeQuery();
+            if(resultSet.next()){
+                if(resultSet.getString("pass").equals(password)){
+                    staff.setUsername(resultSet.getString("username"));
+                    staff.setPosition(resultSet.getString("position"));
+                    return staff;
+                }else return null;
+            }else return null;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
 

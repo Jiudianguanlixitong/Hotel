@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class Room_infoDao extends BaseDao {
     public boolean setRoom_Info(Room_Info room_info) {
-        String sql = "insert into Room_Info values(?,?,?,?,?,?,?)";
+        String sql = "insert into Room_Info values(?,?,?,?,?,'1753-01-01','1753-01-01','整洁','可预订')";
         try (Connection connection = dataSource.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, String.valueOf(room_info.getRoom_id()));
@@ -18,8 +18,6 @@ public class Room_infoDao extends BaseDao {
             preparedStatement.setString(3, room_info.getFace());
             preparedStatement.setString(4, room_info.getFeature());
             preparedStatement.setString(5, room_info.getKind());
-            preparedStatement.setString(6, room_info.getTidy());
-            preparedStatement.setString(7, room_info.getBook_status());
             preparedStatement.executeUpdate();
             return true;
         } catch (SQLException e) {
