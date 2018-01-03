@@ -1,7 +1,5 @@
 package com.dao;
 
-import com.domain.Room_Type;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

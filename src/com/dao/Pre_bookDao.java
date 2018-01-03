@@ -30,8 +30,8 @@ public class Pre_bookDao extends BaseDao {
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
+        return false;
     }
 
     public ArrayList<Pre_Book> queryPre_Book(String identification){

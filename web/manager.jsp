@@ -7,6 +7,8 @@
     <script type="text/javascript" charset="UTF-8" src="js/prefixfree.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/base.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/rear.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 <div class="page">
@@ -81,21 +83,6 @@
                     <div id="UserSetting">
                         <h2 class="header">用户管理</h2>
                     </div>
-                    <!--<div id="links">
-                        <h2 class="header">links</h2>
-                    </div>
-                    <div id="comments">
-                        <h2 class="header">comments</h2>
-                    </div>
-                    <div id="widgets">
-                        <h2 class="header">widgets</h2>
-                    </div>
-                    <div id="users">
-                        <h2 class="header">users</h2>
-                    </div>
-                    <div id="tools">
-                        <h2 class="header">tools</h2>
-                    </div>-->
                     <div id="settings">
                         <h2 class="header">账户设置</h2>
                     </div>
@@ -116,5 +103,15 @@
         </script>
     </section>
 </div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/tether.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/jquery.smartmenus.js"></script>
+<script type="text/javascript" src="js/jquery.parallax.min.js"></script>
+<script type="text/javascript" src="js/jquery.shuffle.min.js"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
