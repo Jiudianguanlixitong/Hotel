@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class CustomerDao extends BaseDao {
     //用户注册
@@ -96,5 +97,25 @@ public class CustomerDao extends BaseDao {
             e.printStackTrace();
         }
         return username;
+    }
+
+    public ArrayList<Customer> queryAll(){
+        String sql="select username,name,gender from Customer";
+        ArrayList<Customer> res = new ArrayList<Customer>();
+        try(Connection connection=dataSource.getConnection()) {
+            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                Customer resCus = new Customer();
+                resCus.setUsername(resultSet.getString("username"));
+                resCus.setName(resultSet.getString("name"));
+                resCus.setGender(resultSet.getString("gender"));
+                res.add(resCus);
+            }
+            return res;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return res;
     }
 }

@@ -27,7 +27,7 @@ public class CustomerRegister extends HttpServlet {
         customer.setGender(new_gender);
         CustomerDao customerDao1 = new CustomerDao();
         if (customerDao1.addCustomer(customer)) {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login.jsp?curUrl=/");
         }
     }
 

@@ -12,10 +12,10 @@ import java.io.IOException;
 @WebServlet("/StaffUpdateBook")
 public class StaffUpdateBook extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id=request.getParameter("identification");
-        Pre_bookDao pre_bookDao=new Pre_bookDao();
-        Boolean b=pre_bookDao.deletePre_Book(Integer.parseInt(id));
-        if(b){
+        String id = request.getParameter("identification");
+        Pre_bookDao pre_bookDao = new Pre_bookDao();
+        Boolean b = pre_bookDao.deletePre_Book(Integer.parseInt(id));
+        if (b) {
             System.out.println("success!");
         }
     }

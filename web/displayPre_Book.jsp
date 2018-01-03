@@ -14,7 +14,7 @@
 <%
     String kind = request.getParameter("kind");
     String price = request.getParameter("price");
-    String room_id=request.getParameter("room_id");
+    String room_id = request.getParameter("room_id");
 %>
 <form action="AffirmPre_Book" method="post">
     <input type="hidden" name="kind" value="<%=kind%>">
@@ -27,7 +27,8 @@
         </tr>
         <tr>
             <td>房间号</td>
-            <td><%=room_id%></td>
+            <td><%=room_id%>
+            </td>
         </tr>
         <tr>
             <td>入住日期</td>

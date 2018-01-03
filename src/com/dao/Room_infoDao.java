@@ -108,15 +108,16 @@ public class Room_infoDao extends BaseDao {
             return null;
         }
     }
-//确认订单后改变房间信息
-    public boolean affirmPre_Book(String room_id,String in_day,String out_day,String book_status){
-        String sql="update Room_Info set in_day=?,out_day=?,book_status=? where room_id=? and in_day='1753-01-01'";
+
+    //确认订单后改变房间信息
+    public boolean affirmPre_Book(String room_id, String in_day, String out_day, String book_status) {
+        String sql = "update Room_Info set in_day=?,out_day=?,book_status=? where room_id=? and in_day='1753-01-01'";
         try (Connection connection = dataSource.getConnection()) {
-            PreparedStatement preparedStatement=connection.prepareStatement(sql);
-            preparedStatement.setString(1,in_day);
-            preparedStatement.setString(2,out_day);
-            preparedStatement.setString(3,book_status);
-            preparedStatement.setString(4,room_id);
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, in_day);
+            preparedStatement.setString(2, out_day);
+            preparedStatement.setString(3, book_status);
+            preparedStatement.setString(4, room_id);
             preparedStatement.executeUpdate();
             return true;
         } catch (SQLException e) {

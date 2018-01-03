@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Room_typeDao extends BaseDao {
-    public boolean setRoom_Type(String kind,String price,String free) {
+    public boolean setRoom_Type(String kind, String price, String free) {
         String sql = "insert into Room_Type values(?,?,?)";
         try (Connection connection = dataSource.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);

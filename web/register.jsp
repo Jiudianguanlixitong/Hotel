@@ -177,7 +177,8 @@
                                 </div>
                             </div>
                             <div class="form-group text-center">
-                                <input type="button" value="注册" class="btn btn-default" data-toggle="modal" data-target="#success" onclick="placeOrder(this.form)">
+                                <input type="button" value="注册" class="btn btn-default" data-toggle="modal"
+                                       data-target="#success" onclick="placeOrder(this.form)">
                             </div>
                         </form>
                     </div>

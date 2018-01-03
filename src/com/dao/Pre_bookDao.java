@@ -20,7 +20,7 @@ public class Pre_bookDao extends BaseDao {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, String.valueOf(pre_book.getId()));
-            preparedStatement.setString(2,String.valueOf(pre_book.getRoom_id()));
+            preparedStatement.setString(2, String.valueOf(pre_book.getRoom_id()));
             preparedStatement.setString(3, pre_book.getIn_day());
             preparedStatement.setString(4, pre_book.getOut_day());
             preparedStatement.setString(5, pre_book.getKind());
@@ -34,16 +34,16 @@ public class Pre_bookDao extends BaseDao {
         return false;
     }
 
-    public ArrayList<Pre_Book> queryPre_Book(String identification){
-        String sql="select * from Pre_Book where identification=?";
-        ArrayList<Pre_Book> pre_books=new ArrayList<Pre_Book>();
+    public ArrayList<Pre_Book> queryPre_Book(String identification) {
+        String sql = "select * from Pre_Book where id=?";
+        ArrayList<Pre_Book> pre_books = new ArrayList<Pre_Book>();
         try {
-            Connection connection=dataSource.getConnection();
-            PreparedStatement preparedStatement=connection.prepareStatement(sql);
-            preparedStatement.setString(1,identification);
-            ResultSet resultSet=preparedStatement.executeQuery();
-            while(resultSet.next()){
-                Pre_Book pre_book=new Pre_Book();
+            Connection connection = dataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, identification);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Pre_Book pre_book = new Pre_Book();
                 pre_book.setId(resultSet.getInt("id"));
                 pre_book.setIn_day(resultSet.getString("in_day"));
                 pre_book.setOut_day(resultSet.getString("out_day"));
@@ -59,11 +59,12 @@ public class Pre_bookDao extends BaseDao {
             return null;
         }
     }
-    public Boolean deletePre_Book(int id){
-        String sql="delete from Pre_Book where id=?";
+
+    public Boolean deletePre_Book(int id) {
+        String sql = "delete from Pre_Book where id=?";
         try {
-            Connection connection=dataSource.getConnection();
-            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+            Connection connection = dataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, String.valueOf(id));
             preparedStatement.executeUpdate();
             return true;

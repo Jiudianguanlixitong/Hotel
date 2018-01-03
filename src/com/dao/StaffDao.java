@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class StaffDao extends BaseDao {
     public boolean addStaff(Staff staff) {
@@ -68,21 +69,43 @@ public class StaffDao extends BaseDao {
             return false;
         }
     }
-    public Staff staffLogin(String username,String password){
-        String sql="select * from Staff where username=?";
-        Staff staff=new Staff();
+
+    public ArrayList<Staff> queryAll(){
+        String sql = "select username,position from Staff";
+        ArrayList<Staff> res = new ArrayList<>();
+        try(Connection connection=dataSource.getConnection()){
+           PreparedStatement preparedStatement = connection.prepareStatement(sql);
+           ResultSet resultSet = preparedStatement.executeQuery();
+           while (resultSet.next()){
+               Staff resStaff = new Staff();
+               resStaff.setUsername(resultSet.getString("username"));
+               resStaff.setPosition(resultSet.getString("position"));
+               res.add(resStaff);
+           }
+           return res;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return res;
+    }
+
+
+
+    public Staff staffLogin(String username, String password) {
+        String sql = "select * from Staff where username=?";
+        Staff staff = new Staff();
         try {
-            Connection connection=dataSource.getConnection();
-            PreparedStatement preparedStatement=connection.prepareStatement(sql);
-            preparedStatement.setString(1,username);
-            ResultSet resultSet=preparedStatement.executeQuery();
-            if(resultSet.next()){
-                if(resultSet.getString("pass").equals(password)){
+            Connection connection = dataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, username);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                if (resultSet.getString("pass").equals(password)) {
                     staff.setUsername(resultSet.getString("username"));
                     staff.setPosition(resultSet.getString("position"));
                     return staff;
-                }else return null;
-            }else return null;
+                } else return null;
+            } else return null;
 
         } catch (SQLException e) {
             e.printStackTrace();

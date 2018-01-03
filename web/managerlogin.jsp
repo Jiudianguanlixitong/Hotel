@@ -26,7 +26,7 @@
                     </div>
                     <div class="col-lg-3 col-md-8 col-sm-8 col-xs-12 pull-right">
                         <div class="header-social pull-right">
-                            <a href="register.jsp">注册</a>
+                            <%--<a href="register.jsp">注册</a>--%>
                             <%--<a href="login.jsp">登陆</a>--%>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h2 class="h2">请填写些必要信息...</h2></div>
                     <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
                     <div class="col-lg-8 col-md-8 col-sm-11 col-xs-11">
-                        <form action="CustomerLogin" method="POST" class="form-horizontal form-wizzard">
+                        <form action="StaffLogin" method="POST" class="form-horizontal form-wizzard">
                             <input type="hidden" value="${param.curUrl}" name="curUrl">
                             <div class="row">
                                 <div class="col-lg-12 col-md-4 col-sm-12 col-xs-12">
