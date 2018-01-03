@@ -4,14 +4,14 @@ import java.util.Date;
 
 public class Bill {
     private int id;
-    private Date in_day;
-    private Date out_day;
+    private String in_day;
+    private String out_day;
     private int room_id;
     private String kind;
     private String request;
     private int price;
 
-    public Bill(int id, Date in_day, Date out_day, int room_id, String kind, String request, int price) {
+    public Bill(int id, String in_day, String out_day, int room_id, String kind, String request, int price) {
         this.id = id;
         this.in_day = in_day;
         this.out_day = out_day;
@@ -29,19 +29,19 @@ public class Bill {
         this.id = id;
     }
 
-    public Date getIn_day() {
+    public String getIn_day() {
         return in_day;
     }
 
-    public void setIn_day(Date in_day) {
+    public void setIn_day(String in_day) {
         this.in_day = in_day;
     }
 
-    public Date getOut_day() {
+    public String getOut_day() {
         return out_day;
     }
 
-    public void setOut_day(Date out_day) {
+    public void setOut_day(String out_day) {
         this.out_day = out_day;
     }
 

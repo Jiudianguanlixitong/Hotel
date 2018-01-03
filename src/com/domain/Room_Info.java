@@ -12,17 +12,12 @@ public class Room_Info {
     private String book_status;
     private int price;
 
-    public Room_Info(int room_id, int floors, String face, String feature, String kind, String in_day, String out_day, String tidy, String book_status, int price) {
+    public Room_Info(int room_id, int floors, String face, String feature, String kind) {
         this.room_id = room_id;
         this.floors = floors;
         this.face = face;
         this.feature = feature;
         this.kind = kind;
-        this.in_day = in_day;
-        this.out_day = out_day;
-        this.tidy = tidy;
-        this.book_status = book_status;
-        this.price = price;
     }
 
     public Room_Info(int room_id, int floors, String face, String feature, String kind, int price) {

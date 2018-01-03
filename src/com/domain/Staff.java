@@ -11,6 +11,11 @@ public class Staff {
         this.position = position;
     }
 
+    public Staff(String username, String position) {
+        this.username = username;
+        this.position = position;
+    }
+
     public Staff() {
         super();
     }

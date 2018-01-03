@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Pre_bookDao extends BaseDao {
     public boolean addPre_Book(Pre_Book pre_book) {
@@ -33,4 +34,42 @@ public class Pre_bookDao extends BaseDao {
         return false;
     }
 
+    public ArrayList<Pre_Book> queryPre_Book(String identification){
+        String sql="select * from Pre_Book where identification=?";
+        ArrayList<Pre_Book> pre_books=new ArrayList<Pre_Book>();
+        try {
+            Connection connection=dataSource.getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setString(1,identification);
+            ResultSet resultSet=preparedStatement.executeQuery();
+            while(resultSet.next()){
+                Pre_Book pre_book=new Pre_Book();
+                pre_book.setId(resultSet.getInt("id"));
+                pre_book.setIn_day(resultSet.getString("in_day"));
+                pre_book.setOut_day(resultSet.getString("out_day"));
+                pre_book.setRoom_id(resultSet.getInt("room_id"));
+                pre_book.setKind(resultSet.getString("kind"));
+                pre_book.setRequest(resultSet.getString("request"));
+                pre_book.setPrice(resultSet.getInt("price"));
+                pre_books.add(pre_book);
+            }
+            return pre_books;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public Boolean deletePre_Book(int id){
+        String sql="delete from Pre_Book where id=?";
+        try {
+            Connection connection=dataSource.getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setString(1, String.valueOf(id));
+            preparedStatement.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

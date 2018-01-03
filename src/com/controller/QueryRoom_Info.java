@@ -35,6 +35,7 @@ public class QueryRoom_Info extends HttpServlet {
             System.out.println("out_day=" + out_day);
             System.out.println("kind=" + kind);
             System.out.println("相隔的天数=" + day);
+            httpSession.setAttribute("day",day);
             if ("all".equals(kind)) {
                 room_infos = room_infoDao.queryRoom_Info_time(in_day, out_day);
             } else {
