@@ -31,7 +31,7 @@
                         <a href="#BookStatus" data-toggle="tab">预定状态</a>
                     </li>
                     <li id="BookSettingTab">
-                        <a href="#BookSetting" data-toggle="tab">预定管理</a>
+                        <a href="#BookSetting" data-toggle="tab" onclick="forwardOrder()">预定管理</a>
                     </li>
                     <li id="UserSettingTab">
                         <a href="#UserSetting" data-toggle="tab">用户管理</a>
@@ -121,15 +121,63 @@
                     <div id="BookSetting" class="tab-pane">
                         <div id="BookSetForm">
                             <h2 class="header">预定管理</h2>
-                            <form id="typeset" action="RoomTypeSet" method="post">
-                                <label>类型</label>
-                                <input type="text" name="kind"><br/>
-                                <label>价格</label>
-                                <input type="text" name="price"><br/>
-                                <label>数量</label>
-                                <input type="text" name="free"><br/>
-                                <input type="submit" value="确认">
-                            </form>
+                            <% if (request.getAttribute("allBook") != null) {%>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>顾客身份证</td>
+                                    <td>房间号</td>
+                                    <td>入住日期</td>
+                                    <td>离店日期</td>
+                                    <td>房间类型</td>
+                                    <td>特殊需求</td>
+                                    <td>价格</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <%
+                                    ArrayList<Pre_Book> Allpre_books = (ArrayList<Pre_Book>) request.getAttribute("allBook");
+                                    for (Pre_Book inf : Allpre_books) {
+                                %>
+                                <form id="confirmBook" name="confirm1" action="StaffAffirmBook#BookStatus"
+                                      method="post">
+                                    <tr>
+                                        <td><%=inf.getId() %>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="room_id" value="<%=inf.getRoom_id()%>">
+                                        </td>
+                                        <td>
+                                            <input type="date" name="in_day" value="<%=inf.getIn_day()%>">
+                                        </td>
+                                        <td>
+                                            <input type="date" name="out_day" value="<%=inf.getOut_day()%>">
+                                        </td>
+                                        <td>
+                                            <input type="text" name="kind" value="<%=inf.getKind()%>">
+                                        </td>
+                                        <td>
+                                            <input type="text" name="addition" value="<%=inf.getRequest()%>">
+                                        </td>
+                                        <td>
+                                            <input type="text" name="sum_price" value="<%=inf.getPrice()%>">
+                                        </td>
+                                        <td>
+                                            <input type="hidden" name="identification" value="<%=inf.getId()%>">
+                                            <a onclick="formSubmit('#confirmBook')">提交</a>
+                                        </td>
+                                </form>
+                                </td>
+                                <td>
+                                    <form id="deltheBook" action="StaffUpdateBook#BookStatus" method="post">
+                                        <input type="hidden" name="identification" value="<%=inf.getId()%>">
+                                        <%--<input type="submit" value="删除">--%>
+                                        <a onclick="formSubmit('#deltheBook')">删除</a>
+                                    </form>
+                                </td>
+                                </tr>
+                                <%}%>
+                            </table>
+                            <%}%>
                         </div>
                     </div>
                     <div id="UserSetting" class="tab-pane">

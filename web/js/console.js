@@ -23,3 +23,7 @@ var activeTab = localStorage.getItem('activeTab');
 if (activeTab) {
     $('#Consoletabs a[href="' + activeTab + '"]').tab('show');
 }
+
+function forwardOrder() {
+    window.location.href="/QueryAllBook";
+}

@@ -73,4 +73,29 @@ public class Pre_bookDao extends BaseDao {
             return false;
         }
     }
+
+    public ArrayList<Pre_Book> queryAllBook(){
+        String sql = "select * from Pre_Book";
+        ArrayList<Pre_Book> ret = new ArrayList<>();
+        try(Connection connection = dataSource.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                Pre_Book retBook = new Pre_Book();
+                retBook.setId(resultSet.getInt("id"));
+                retBook.setId(resultSet.getInt("room_id"));
+                retBook.setIn_day(resultSet.getString("in_day"));
+                retBook.setOut_day(resultSet.getString("out_day"));
+                retBook.setKind(resultSet.getString("kind"));
+                retBook.setRequest(resultSet.getString("request"));
+                retBook.setPrice(resultSet.getInt("price"));
+                ret.add(retBook);
+            }
+            return ret;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ret;
+    }
+
 }
