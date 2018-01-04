@@ -99,13 +99,13 @@ public class CustomerDao extends BaseDao {
         return username;
     }
 
-    public ArrayList<Customer> queryAll(){
-        String sql="select username,name,gender from Customer";
+    public ArrayList<Customer> queryAll() {
+        String sql = "select username,name,gender from Customer";
         ArrayList<Customer> res = new ArrayList<Customer>();
-        try(Connection connection=dataSource.getConnection()) {
-            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+        try (Connection connection = dataSource.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 Customer resCus = new Customer();
                 resCus.setUsername(resultSet.getString("username"));
                 resCus.setName(resultSet.getString("name"));

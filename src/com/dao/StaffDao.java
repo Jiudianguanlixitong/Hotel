@@ -70,25 +70,24 @@ public class StaffDao extends BaseDao {
         }
     }
 
-    public ArrayList<Staff> queryAll(){
+    public ArrayList<Staff> queryAll() {
         String sql = "select username,position from Staff";
         ArrayList<Staff> res = new ArrayList<>();
-        try(Connection connection=dataSource.getConnection()){
-           PreparedStatement preparedStatement = connection.prepareStatement(sql);
-           ResultSet resultSet = preparedStatement.executeQuery();
-           while (resultSet.next()){
-               Staff resStaff = new Staff();
-               resStaff.setUsername(resultSet.getString("username"));
-               resStaff.setPosition(resultSet.getString("position"));
-               res.add(resStaff);
-           }
-           return res;
-        }catch (SQLException e){
+        try (Connection connection = dataSource.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Staff resStaff = new Staff();
+                resStaff.setUsername(resultSet.getString("username"));
+                resStaff.setPosition(resultSet.getString("position"));
+                res.add(resStaff);
+            }
+            return res;
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return res;
     }
-
 
 
     public Staff staffLogin(String username, String password) {

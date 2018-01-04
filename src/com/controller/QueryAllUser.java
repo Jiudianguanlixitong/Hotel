@@ -30,9 +30,9 @@ public class QueryAllUser extends HttpServlet {
         if (queryKind.equals("cus")) {
             retCus = queryCus.queryAll();
             request.setAttribute("CusAll", retCus);
-        }else {
+        } else {
             retStaff = queryStaff.queryAll();
-            request.setAttribute("StaffAll",retStaff);
+            request.setAttribute("StaffAll", retStaff);
         }
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/manager.jsp");

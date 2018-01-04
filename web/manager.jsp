@@ -244,28 +244,7 @@
                                 </select>
                                 <input type="submit" value="确认">
                             </form>
-                            <a href="manager.jsp?type=add#UserSetting">添加用户</a>
-                            <% String method;
-                                if (request.getAttribute("type") != null) {
-                                    method = (String) request.getParameter("type");
-                                    if (method.equals("add")) { %>
-                            <form method="post" action="AccountSet">
-                                <label>用户名</label>
-                                <input type="text" name="username">
-                                <label>密码</label>
-                                <input type="password" name="password">
-                                <label>职位</label>
-                                <select name="positionn">
-                                    <option value="经理">经理</option>
-                                    <option value="前台">前台</option>
-                                </select>
-                            </form>
-                            <%}%>
-                            <%}%>
-                            <%--<% if (request.getParameter("type").equals("add")) { %>--%>
-                            <%--<table>--%>
-
-                            <%--</table>--%>
+                            <a href="useradd.jsp?type=add">添加用户</a>
                         </div>
                     </div>
                     <div id="settings">

@@ -1,4 +1,4 @@
-package com.controller;
+package com.filter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(filterName = "LogFilter", urlPatterns = {"/manager.jsp" })
+@WebFilter(filterName = "ManagerFilter", urlPatterns = {"/manager.jsp"})
 public class LogFilter implements Filter {
     private FilterConfig config;
 
@@ -20,7 +20,6 @@ public class LogFilter implements Filter {
         HttpServletResponse httpServletResponse = (HttpServletResponse) resp;
         HttpServletRequest httpServletRequest = (HttpServletRequest) req;
         HttpSession session = httpServletRequest.getSession();
-        RequestDispatcher requestDispatcher = httpServletRequest.getRequestDispatcher("index.jsp");
 
         if (session.getAttribute("username") == null) {
             httpServletResponse.sendRedirect("index.jsp");
