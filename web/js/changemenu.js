@@ -1,5 +1,5 @@
 // $(document).ready(function () {
-function changeMenu() {
+/*function changeMenu() {
     var Bookform = $("#BookForm").detach();
     var RoomDetail = $("#RoomDetForm").detach();
     var BookSetting = $("#BookSetForm").detach();
@@ -20,6 +20,6 @@ function changeMenu() {
     $("#UserTa").click(function () {
         $("#UserSetting").prepend(UserSetting);
     });
-}
-
+}*/
+$("#tabs").tabs();
 // });

@@ -218,6 +218,7 @@
 
         shuffleme.init(); //filter portfolio
 
+        $("#tabs").tabs();
     });
 })(jQuery);
 

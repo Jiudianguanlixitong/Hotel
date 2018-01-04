@@ -5,6 +5,11 @@ public class Room_Type {
     private int price;
     private int free;
 
+    public Room_Type() {
+
+    }
+
+
     public Room_Type(String kind, int price, int free) {
         this.kind = kind;
         this.price = price;

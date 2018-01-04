@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/RoomInfoSet")
+@WebServlet(name = "RoomInfSet", urlPatterns = {"/RoomInfoSet"})
 public class RoomInfoSet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String room_id = request.getParameter("room_id");

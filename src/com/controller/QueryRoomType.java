@@ -1,7 +1,7 @@
 package com.controller;
 
-import com.dao.Pre_bookDao;
-import com.domain.Pre_Book;
+import com.dao.Room_typeDao;
+import com.domain.Room_Type;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,15 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "StaffQueryBook", urlPatterns = {"/StaffQueryBook"})
-public class StaffQueryBook extends HttpServlet {
+@WebServlet(name = "QueryRoomType", urlPatterns = {"/QueryRoomType"})
+public class QueryRoomType extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String identification = request.getParameter("identification");
-        Pre_bookDao pre_bookDao = new Pre_bookDao();
-        ArrayList<Pre_Book> pre_books = new ArrayList<Pre_Book>();
-        pre_books = pre_bookDao.queryPre_Book(identification);
-        request.setAttribute("pre_books", pre_books);
-        //显示订单
+        ArrayList<Room_Type> retRoom = new ArrayList<>();
+        Room_typeDao queryRoom = new Room_typeDao();
+        retRoom = queryRoom.queryRoomType();
+        request.setAttribute("allRoomType", retRoom);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/Console.jsp");
         requestDispatcher.forward(request, response);
     }

@@ -23,7 +23,7 @@ public class AccountSet extends HttpServlet {
         boolean b = staffDao.addStaff(staff);
         if (b) {
             System.out.println("success!");
-            response.sendRedirect("manager.jsp#UserSetting");
+            response.sendRedirect("Console.jsp#UserSetting");
         }
     }
 
@@ -33,10 +33,10 @@ public class AccountSet extends HttpServlet {
         String username = request.getParameter("username");
         StaffDao staffDao = new StaffDao();
         Boolean b = staffDao.deleteStaff("username");
-        response.sendRedirect("manager.jsp#UserSetting");
+        response.sendRedirect("Console.jsp#UserSetting");
         if (b) {
             System.out.println("success!");
-            response.sendRedirect("manager.jsp#UserSetting");
+            response.sendRedirect("Console.jsp#UserSetting");
         }
     }
 }

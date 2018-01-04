@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/StaffLogin")
+@WebServlet(name = "StaffLogin", urlPatterns = {"/StaffLogin"})
 public class StaffLogin extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -21,11 +21,17 @@ public class StaffLogin extends HttpServlet {
         String password = request.getParameter("password");
         StaffDao staffDao = new StaffDao();
         Staff staff = new Staff();
-        staff = staffDao.staffLogin("username", "password");
+        staff = staffDao.staffLogin(username, password);
         session.setAttribute("username", username);
+        String position = staff.getPosition();
         //跳转到登录界面
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("manager.jsp");
-        requestDispatcher.forward(request, response);
+        if (position.equals("经理")) {
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("manager.jsp");
+            requestDispatcher.forward(request, response);
+        } else {
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("staffManager.jsp");
+            requestDispatcher.forward(request, response);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
