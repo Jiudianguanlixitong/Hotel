@@ -22,6 +22,7 @@ public class RoomInfoSet extends HttpServlet {
         Room_Info room_info = new Room_Info(Integer.parseInt(room_id), Integer.parseInt(floors), face, feature, kind);
         Boolean b = room_infoDao.setRoom_Info(room_info);
         if (b) {
+            response.sendRedirect("manager.jsp#BookStatus");
             System.out.println("success!");
         }
     }

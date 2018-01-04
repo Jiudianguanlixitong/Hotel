@@ -39,8 +39,10 @@
             <div class="main">
                 <ul class="topbar clearfix">
                     <li><a href="#">用户信息</a></li>
-                    <li><a href="StaffLogin">登录</a></li>
-                    <!--                    <li><a href="#">p</a></li>
+                    <% if (session.getAttribute("username") != null) {%>
+                    <li><%=session.getAttribute("username")%>
+                    </li>
+                    <%}%>           <!--                    <li><a href="#">p</a></li>
                                         <li><a href="#">o</a></li>
                                         <li><a href="#">f</a></li>
                                         <li><a href="#">n</a></li>-->
@@ -202,6 +204,7 @@
                                 <% } %>
                             </table>
                             <% } %>
+
                             <% if (request.getAttribute("StaffAll") != null) {%>
                             <table>
                                 <tr>
@@ -224,17 +227,45 @@
                                             <input type="submit" value="删除">
                                         </form>
                                     </td>
-                                    <td>
-                                        <form action="" method="">
-
-                                        </form>
-                                    </td>
                                 </tr>
-                                <%
-                                    }%>
+                                <% }%>
+                                <%}%>
                             </table>
-                            <% }
-                            %>
+
+                            <form method="post" action="AccountSet#UserSetting">
+                                <label>用户名</label>
+                                <input type="text" name="username">
+                                <label>密码</label>
+                                <input type="password" name="password">
+                                <label>职位</label>
+                                <select name="position">
+                                    <option value="经理">经理</option>
+                                    <option value="前台">前台</option>
+                                </select>
+                                <input type="submit" value="确认">
+                            </form>
+                            <a href="manager.jsp?type=add#UserSetting">添加用户</a>
+                            <% String method;
+                                if (request.getAttribute("type") != null) {
+                                    method = (String) request.getParameter("type");
+                                    if (method.equals("add")) { %>
+                            <form method="post" action="AccountSet">
+                                <label>用户名</label>
+                                <input type="text" name="username">
+                                <label>密码</label>
+                                <input type="password" name="password">
+                                <label>职位</label>
+                                <select name="positionn">
+                                    <option value="经理">经理</option>
+                                    <option value="前台">前台</option>
+                                </select>
+                            </form>
+                            <%}%>
+                            <%}%>
+                            <%--<% if (request.getParameter("type").equals("add")) { %>--%>
+                            <%--<table>--%>
+
+                            <%--</table>--%>
                         </div>
                     </div>
                     <div id="settings">
@@ -242,10 +273,10 @@
                     </div>
                 </div>
                 <ul class="statusbar">
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                    <li class="profiles-setting"><a href="">s</a></li>
-                    <li class="logout"><a href="">k</a></li>
+                    <li><a href="index.jsp"></a></li>
+                    <li><a href="index.jsp"></a></li>
+                    <li class="profiles-setting"><a href="index.jsp">s</a></li>
+                    <li class="logout"><a href="index.jsp">k</a></li>
                 </ul>
             </div>
         </div>

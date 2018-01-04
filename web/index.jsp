@@ -516,6 +516,7 @@
     </footer>
     --%>
 </div>
+<a href="managerlogin.jsp">管理员登陆</a>
 <!-- /footer -->
 <!-- Scripts -->
 <script type="text/javascript" src="js/jquery.min.js"></script>

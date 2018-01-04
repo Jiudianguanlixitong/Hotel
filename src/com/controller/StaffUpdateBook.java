@@ -16,6 +16,7 @@ public class StaffUpdateBook extends HttpServlet {
         Pre_bookDao pre_bookDao = new Pre_bookDao();
         Boolean b = pre_bookDao.deletePre_Book(Integer.parseInt(id));
         if (b) {
+            response.sendRedirect("manager.jsp#BookStatus");
             System.out.println("success!");
         }
     }

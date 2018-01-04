@@ -14,6 +14,7 @@ import java.io.IOException;
 public class AccountSet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //前台账号添加
+        request.setCharacterEncoding("UTF-8");
         String username = request.getParameter("username");
         String passwod = request.getParameter("password");
         String position = request.getParameter("position");
@@ -22,16 +23,20 @@ public class AccountSet extends HttpServlet {
         boolean b = staffDao.addStaff(staff);
         if (b) {
             System.out.println("success!");
+            response.sendRedirect("manager.jsp#UserSetting");
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //前台帐号删除
+        request.setCharacterEncoding("UTF-8");
         String username = request.getParameter("username");
         StaffDao staffDao = new StaffDao();
         Boolean b = staffDao.deleteStaff("username");
+        response.sendRedirect("manager.jsp#UserSetting");
         if (b) {
             System.out.println("success!");
+            response.sendRedirect("manager.jsp#UserSetting");
         }
     }
 }

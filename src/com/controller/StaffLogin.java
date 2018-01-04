@@ -9,17 +9,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/StaffLogin")
 public class StaffLogin extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        HttpSession session = request.getSession();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         StaffDao staffDao = new StaffDao();
         Staff staff = new Staff();
         staff = staffDao.staffLogin("username", "password");
-        request.setAttribute("staff", staff);
+        session.setAttribute("username", username);
         //跳转到登录界面
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("manager.jsp");
         requestDispatcher.forward(request, response);

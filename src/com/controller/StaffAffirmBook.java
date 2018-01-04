@@ -25,6 +25,7 @@ public class StaffAffirmBook extends HttpServlet {
         BillDao billDao = new BillDao();
         Boolean b = billDao.addBill(bill);
         if (b) {
+            response.sendRedirect("manager.jsp#BookStatus");
             System.out.println("success!");
         }
     }
