@@ -21,7 +21,8 @@ public class StaffQueryBook extends HttpServlet {
         pre_books = pre_bookDao.queryPre_Book(identification);
         request.setAttribute("pre_books", pre_books);
         //显示订单
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/Console.jsp");
+        String curUrl = request.getRequestURI();
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher(curUrl);
         requestDispatcher.forward(request, response);
     }
 

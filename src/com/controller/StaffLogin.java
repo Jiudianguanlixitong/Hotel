@@ -26,10 +26,10 @@ public class StaffLogin extends HttpServlet {
         String position = staff.getPosition();
         //跳转到登录界面
         if (position.equals("经理")) {
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("manager.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("Console.jsp");
             requestDispatcher.forward(request, response);
         } else {
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("staffManager.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("Consolelite.jsp");
             requestDispatcher.forward(request, response);
         }
     }
