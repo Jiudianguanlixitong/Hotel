@@ -27,3 +27,7 @@ if (activeTab) {
 function forwardOrder() {
     window.location.href="/QueryAllBook";
 }
+
+function backurl() {
+   window.location.href='/index.jsp';
+}

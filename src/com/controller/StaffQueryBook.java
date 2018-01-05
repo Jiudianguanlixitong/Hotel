@@ -21,9 +21,15 @@ public class StaffQueryBook extends HttpServlet {
         pre_books = pre_bookDao.queryPre_Book(identification);
         request.setAttribute("pre_books", pre_books);
         //显示订单
-        String curUrl = request.getRequestURI();
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher(curUrl);
-        requestDispatcher.forward(request, response);
+        String curUrl = request.getParameter("curUrl");
+        if(curUrl!=null) {
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher(curUrl);
+            requestDispatcher.forward(request, response);
+        }else {
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/Concole.jsp");
+            requestDispatcher.forward(request,response);
+        }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

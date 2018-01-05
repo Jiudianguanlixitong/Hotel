@@ -33,6 +33,9 @@
                     <li id="BookSettingTab">
                         <a href="#BookSetting" data-toggle="tab" onclick="forwardOrder()">预定管理</a>
                     </li>
+                    <li id="logout">
+                        <a href="index.jsp" data-toggle="tab" onclick="backurl()">退出</a>
+                    </li>
                     <%--<li id="UserSettingTab">--%>
                         <%--<a href="#UserSetting" data-toggle="tab">用户管理</a>--%>
                     <%--</li>--%>
@@ -54,6 +57,7 @@
                                 <div class="form-group">
                                     <label>顾客身份证</label>
                                     <input type="text" name="identification">
+                                    <input type="hidden" value="Consolelite.jsp" name="curUrl">
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" class="btn-default btn" value="查询">
@@ -108,6 +112,7 @@
                                 <td>
                                     <form id="delBook" action="StaffUpdateBook#BookStatus" method="post">
                                         <input type="hidden" name="identification" value="<%=inf.getId()%>">
+                                        <input type="hidden" value="Consolelite.jsp" name="curUrl">
                                         <%--<input type="submit" value="删除">--%>
                                         <a onclick="formSubmit('#delBook')">删除</a>
                                     </form>

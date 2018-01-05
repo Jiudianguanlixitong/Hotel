@@ -39,6 +39,12 @@
                     <li id="RoomSettingTab">
                         <a href="#RoomSetting" data-toggle="tab">房间管理</a>
                     </li>
+                    <li id="Graph">
+                        <a href="#GraphTab" data-toggle="tab">图表</a>
+                    </li>
+                    <li id="logout">
+                        <a href="index.jsp" data-toggle="tab" onclick="backurl()">退出</a>
+                    </li>
                 </ul>
                 <div class="tab-content">
                     <div id="UserInfo" class="tab-pane active">
@@ -53,6 +59,7 @@
                             <form id="idForm" name="idForm1" action="StaffQueryBook#BookStatus" method="post">
                                 <div class="form-group">
                                     <label>顾客身份证</label>
+                                    <input type="hidden" value="Console.jsp" name="curUrl">
                                     <input type="text" name="identification">
                                 </div>
                                 <div class="form-group">
@@ -387,13 +394,20 @@
                             }
                         %>
                     </div>
+                    <div id="GraphTab" class="tab-pane">
+                        <div>
+                            <h2>图表</h2>
+                            <canvas id="myChart" width="400" height="400">
+
+                            </canvas>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- Scripts -->
-
 <!--<script type="text/javascript" src="js/moment.min.js"></script>-->
 <!--<script type="text/javascript" src="js/jquery.smartmenus.js"></script>-->
 <!--<script type="text/javascript" src="js/jquery.parallax.min.js"></script>-->
@@ -402,8 +416,9 @@
 <!--&lt;!&ndash;-<script type="text/javascript" src="http://ditu.google.cn/maps/api/js"></script>-&ndash;&gt;-->
 <!--<script type="text/javascript" src="js/main.js"></script>-->
 <script type="text/javascript" src="js/console.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
 <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
 <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
-
+<script type="text/javascript" src="js/graph.js"></script>
 </body>
 </html>
